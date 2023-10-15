@@ -18,45 +18,19 @@ button {
     background-color: transparent;
     border: none;
     outline: none;
+    cursor: pointer;
 }
-
-body:has(button:hover) #main-cursor {
-    background-color: rgba(47, 68, 255, 0.336);
-    transition: background-color .3s;
-}
-
-:root {
-    cursor: none;
-}
-
-#main-cursor {
-    width: 70px;
-    height: 70px;
-    background-color: #7287e87a;
-    border-radius: 100%;
-    position: fixed;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    z-index: 20;
-}
-
-#second-cursor {
-    width: 50px;
-    height: 50px;
-    background-image: radial-gradient(rgb(50, 126, 202), transparent 70%);
-    border-radius: 100%;
-    position: fixed;
-    transform: translate(-50%, -50%);
-    transition: .1s top ease-out, .1s left ease-out;
-    pointer-events: none;
-    z-index: 20;
-}
-
 
 .header {
     display: flex;
     justify-content: space-between;
     padding-block: 2%;
+    position: sticky;
+    top: 0px;
+    z-index: 15;
+    background-color: rgb(22, 23, 25);
+    margin-inline: clamp(-30px, -5%, -120px);
+    padding-inline: clamp(30px, 5%, 120px);
 }
 
 .logo-title {
@@ -68,6 +42,30 @@ body:has(button:hover) #main-cursor {
     font-size: 2.6rem;
 }
 
+.header .left-items {
+    display: flex;
+    justify-content: space-between;
+    gap: clamp(10px, 3%, 15px);
+}
+
+.header .cart-item {
+    position: relative;
+}
+
+.header .cart-item span {
+    color: white;
+    font-size: 2rem;
+}
+
+.items-cats-added {
+    background-color: rgb(103, 90, 90);
+    position: absolute; 
+    right: 0px;
+}
+
+
+
+
 .section-cat-images {
     display: flex;
     align-items: center;
@@ -75,35 +73,41 @@ body:has(button:hover) #main-cursor {
     flex-wrap: wrap;
     gap: 2%;
     margin-top: 1%;
+    margin-bottom: 10%;
 }
 
-.container-image-cat {
+.container-cat-pet {
     width: max(32%, 250px);
-    height: 300px;
     margin-bottom: 2%;
     position: relative;
     transition: .3s box-shadow, .4s transform;
-    border-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
     box-sizing: border-box;
 }
 
-.container-image-cat:hover {
+.container-cat-pet:hover {
     box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.060);
     transform: scale(103%);
     z-index: 10;
 }
 
-.container-image-cat > img {
+.container-cat-image {
+    height: 300px;
+}
+
+.container-cat-image > img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     object-position: center center;
-    border-radius: 8px;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
 }
 
 .catfactindividual {
     position: absolute;
-    bottom: 0px;
+    bottom: 50px;
     width: 100%;
     height: 30%;
     background-color: rgba(0, 0, 0, 0.419);
@@ -115,6 +119,45 @@ body:has(button:hover) #main-cursor {
     padding: 5% 8%;
     box-sizing: border-box;
     width: 100%;
+}
+
+.add-cat-buy {
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.buy-button, .add-to-cart-button {
+    font-family: "Gabarito", sans-serif;
+    height: 100%;
+    width: 50%;
+    font-size: 1.4rem;
+    color: rgb(227, 227, 227);
+    transition: .1s filter, .1s box-shadow;
+}
+
+.buy-button:hover, .add-to-cart-button:hover {
+    filter: contrast(120%);
+}
+
+.buy-button:hover {
+    box-shadow: 3px 2px 3px rgba(0, 0, 0, 0.223);
+}
+
+.add-to-cart-button:hover {
+    box-shadow: -3px 2px 3px rgba(0, 0, 0, 0.223);
+}
+
+.buy-button {
+    background-color: rgb(116, 177, 87);
+    border-bottom-left-radius: 8px;
+}
+
+.add-to-cart-button {
+    background-color: rgb(154, 165, 149);
+    border-bottom-right-radius: 8px;
 }
 
 .randomize-container-button {
@@ -142,5 +185,4 @@ body:has(button:hover) #main-cursor {
     transform: scale(103%);
     background-color: rgb(47, 107, 88);
     transition: .1s transform;
-
 }

@@ -8,28 +8,58 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 </head>
 <body>
-    <div id="main-cursor"></div>
-    <div id="second-cursor"></div>
     <header class="header">
-        <h1 class="logo-title">CatChoice</h1>
-        <div>
-            <button class="menu-button"><span class="material-symbols-outlined">
-                menu
-                </span></button>
+        <div class="left-items">
+            <div>
+                <button class="menu-button"><span class="material-symbols-outlined">menu</span></button>
+            </div>
+            <h1 class="logo-title">CatChoice</h1>
+        </div>
+        <div class="cart-item">
+            <button class="add-item-button">
+                <span class="material-symbols-outlined">shopping_cart</span>
+            </button>
+            <div class="items-cats-added">
+                <!--<div class="cat-item">
+                    <div class="left-items">
+                        <div class="delete-item-container">
+                            <button class="remove-item">
+                                <span class="material-symbols-outlined">delete_forever</span>
+                            </button>
+                        </div>
+                        <div class="cat-image-container">
+                            <img src="" alt="">
+                        </div>
+                    </div>
+                    <div class="right-items">
+                        <div class="price-container">
+
+                        </div>
+                        <div class="add-more-remove-container">
+                            <button>
+                                <span class="material-symbols-outlined">add</span>
+                            </button>
+                            <button>
+                                <span class="material-symbols-outlined">remove</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>-->
+            </div>
         </div>
     </header>
     <main>
         <section class="section-cat-images">
-        <!--<div class="container-image-cat">
+        <!--<div class="container-cat-pet">
                 <img src="${pic}" alt="Cat Image">
                 <div class="catfactindividual"></div>
             </div>-->
         </section>
         <div class="randomize-container-button">
-            <button class="button-randomize">Add more Cats</button>
+            <button class="button-randomize">Randomize Cats</button>
         </div>
     </main>
-    <script src="script.js"></script>
     <script src="apicat.js"></script>
+    <script src="additemscart.js"></script>
 </body>
 </html>
