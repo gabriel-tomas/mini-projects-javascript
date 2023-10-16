@@ -1,5 +1,6 @@
 const sectionCatsImages = document.querySelector(".section-cat-images");
 const BtnRandomizeCats = document.querySelector(".button-randomize");
+let itemsAdded = [];
 
 async function CatPicture() {
     const urlCat = await fetch("https://api.thecatapi.com/v1/images/search");
@@ -25,7 +26,7 @@ async function SetImgAndP(){
     let pictureFunc = String(pic);
     let paragraph = await CatFact();
     let randomPrice = Math.round(Math.random() * (7 - 1) + 1);
-
+    
     sectionCatsImages.innerHTML += `<div class="container-cat-pet">
         <div class="container-cat-image">
             <img src="${pic}" alt="Cat Image">
@@ -41,6 +42,7 @@ async function SetImgAndP(){
 }
 
 function ReAddContent() {
+    itemsAdded = [];
     for (let i = 0;i <= 5;i++) {
         sectionCatsImages.innerHTML = ``;
     }
@@ -52,4 +54,4 @@ function ReAddContent() {
 
 BtnRandomizeCats.addEventListener("mousedown", ReAddContent);
 
-ReAddContent();
+ReAddContent(); 

@@ -52,17 +52,84 @@ button {
     position: relative;
 }
 
-.header .cart-item span {
+.header .cart-item .add-item-button span {
     color: white;
     font-size: 2rem;
 }
 
+
+
 .items-cats-added {
-    background-color: rgb(103, 90, 90);
-    position: absolute; 
+    background-color: rgb(78, 120, 83);
+    position: absolute;
     right: 0px;
+    padding: 20px;
+    overflow: scroll;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    border-radius: 10px;
+    width: fit-content;
 }
 
+.cat-item span {
+    font-size: 1.7rem;
+}
+
+.cat-item {
+    display: flex;
+    background-color: rgb(231, 231, 231);
+    padding: 2%;
+    border-radius: 10px;
+    align-items: center;
+    gap: 4%;
+    width: 270px;
+}
+
+.cat-item .remove-item span {
+    color: black;
+}
+
+.cat-item > .left-items, .cat-item > .right-items, .cat-item > .right-items > .add-more-remove-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.cat-item > .left-items {
+    align-items: flex-start;
+}
+
+.price-paragraph > .accent-price {
+    color: rgb(108, 133, 5);
+}
+
+.cat-item > .right-items {
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 50px;
+}
+
+.add-more-remove-container .add-cat span {
+    color: black;
+}
+
+.add-more-remove-container .remove-cat span {
+    color: black;
+}
+
+.cat-image-container {
+    width: 150px;
+    height: 100px;
+}
+
+.cat-item .left-items .cat-image-container > img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+}
 
 
 
