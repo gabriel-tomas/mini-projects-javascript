@@ -10,8 +10,8 @@ html {
 }
 
 body {
-    background-color: rgb(22, 23, 25);
-    padding-inline: clamp(30px, 5%, 120px);
+    background-color: rgb(242, 242, 242);
+    
 }
 
 button {
@@ -28,9 +28,8 @@ button {
     position: sticky;
     top: 0px;
     z-index: 15;
-    background-color: rgb(22, 23, 25);
-    margin-inline: clamp(-30px, -5%, -120px);
-    padding-inline: clamp(30px, 5%, 120px);
+    background-color: rgb(47, 72, 118);
+    padding-inline: 5%;
 }
 
 .logo-title {
@@ -60,7 +59,7 @@ button {
 
 
 .items-cats-added {
-    background-color: rgb(78, 120, 83);
+    background-color: rgb(39, 60, 98);
     position: absolute;
     right: 0px;
     padding: 20px;
@@ -141,6 +140,7 @@ button {
     gap: 2%;
     margin-top: 1%;
     margin-bottom: 10%;
+    padding-inline: clamp(30px, 5%, 120px);
 }
 
 .container-cat-pet {
@@ -148,13 +148,12 @@ button {
     margin-bottom: 2%;
     position: relative;
     transition: .3s box-shadow, .4s transform;
-    border-top-left-radius: 8px;
-    border-top-right-radius: 8px;
+    border-radius: 8px;
     box-sizing: border-box;
 }
 
 .container-cat-pet:hover {
-    box-shadow: 0px 0px 30px rgba(255, 255, 255, 0.060);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.477);
     transform: scale(103%);
     z-index: 10;
 }
@@ -176,17 +175,17 @@ button {
     position: absolute;
     bottom: 50px;
     width: 100%;
-    height: 30%;
+    height: 20%;
     background-color: rgba(0, 0, 0, 0.419);
     overflow: scroll;
+    color: white;
 }
 
-.catfactindividual > p {
-    color: white;
+/*.catfactindividual > p {
     padding: 5% 8%;
     box-sizing: border-box;
     width: 100%;
-}
+}*/
 
 .add-cat-buy {
     border-bottom-left-radius: 8px;
@@ -218,12 +217,12 @@ button {
 }
 
 .buy-button {
-    background-color: rgb(116, 177, 87);
+    background-color: rgb(180, 197, 66);
     border-bottom-left-radius: 8px;
 }
 
 .add-to-cart-button {
-    background-color: rgb(154, 165, 149);
+    background-color: rgb(164, 165, 149);
     border-bottom-right-radius: 8px;
 }
 
@@ -238,18 +237,18 @@ button {
 .button-randomize {
     width: clamp(150px, 35vw, 400px);
     height: 50px;
-    background-color: rgb(56, 125, 103);
+    background-color: rgb(183, 171, 78);
     font-family: "Gabarito", sans-serif;
     border-radius: 100px;
     font-size: 1.2rem;
     color: rgb(229, 229, 229);
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.325);
     box-sizing: border-box;
-    transition: .02s transform, .2s background-color;
+    transition: .02s transform, .2s filter;
 }
 
 .button-randomize:hover {
     transform: scale(103%);
-    background-color: rgb(47, 107, 88);
+    background-color: rgb(206, 192, 88);
     transition: .1s transform;
 }

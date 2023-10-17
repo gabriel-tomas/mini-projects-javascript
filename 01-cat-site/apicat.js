@@ -1,6 +1,7 @@
 const sectionCatsImages = document.querySelector(".section-cat-images");
 const BtnRandomizeCats = document.querySelector(".button-randomize");
 let itemsAdded = [];
+let NamesCatList = [];
 
 async function CatPicture() {
     const urlCat = await fetch("https://api.thecatapi.com/v1/images/search");
@@ -21,7 +22,7 @@ async function CatFact() {
 }
 
 
-async function SetImgAndP(){
+async function SetImgAndP(indexName){
     let pic = await CatPicture();
     let pictureFunc = String(pic);
     let paragraph = await CatFact();
@@ -32,7 +33,7 @@ async function SetImgAndP(){
             <img src="${pic}" alt="Cat Image">
         </div>
         <div class="catfactindividual">
-            <p>${paragraph}</p>
+            <h2>${NamesCatList[indexName]}</h2>
         </div>
         <div class="add-cat-buy">
             <button class="buy-button">Buy</button>
@@ -43,11 +44,22 @@ async function SetImgAndP(){
 
 function ReAddContent() {
     itemsAdded = [];
-    for (let i = 0;i <= 5;i++) {
-        sectionCatsImages.innerHTML = ``;
+    NamesCatList = [];
+
+    async function addNamesToList() {
+        let siteNames = await fetch("https://randomuser.me/api/?results=6");
+        let responseNames = await siteNames.json();
+        responseNames = responseNames["results"];
+        for (item of responseNames) {
+            NamesCatList.push(item.name.first);
+        }
+        console.log(NamesCatList);
     }
+    addNamesToList();
+
+    sectionCatsImages.innerHTML = ``;
     for (let i = 0;i <= 5;i++) {
-        SetImgAndP();
+        SetImgAndP(i);
     }
 }
 
