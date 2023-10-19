@@ -1,6 +1,31 @@
 const itemCartDiv = document.querySelector(".items-cats-added");
 let pricesItems = {};
 let paragraphPrices = {};
+let itemsAddedCounter = 0;
+
+itemCartDiv.innerHTML = "<p class='without-itemsadded'>You don't have any items added</p>";
+itemCartDiv.style.width = '300px';
+
+function withOutItems() {
+    const pElementWithOut = document.querySelector(".without-itemsadded");
+
+    if(itemsAdded.length === 0) {
+        console.log("sem items");
+        pElementWithOut.style.display = "block";
+    }
+    else {
+        console.log("com items");
+        itemCartDiv.style.width = 'fit-content';
+        pElementWithOut.style.display = "none";
+    }
+}
+
+function countItems() {
+    const elementCounter = document.querySelector(".itemsCount > span");
+    elementCounter.innerHTML = ++itemsAddedCounter;
+    console.log(elementCounter);
+    console.log("adicionado mais um item");
+}
 
 function addToCart(picture, price) {
     if (itemsAdded.indexOf(picture) != -1) {
@@ -37,12 +62,12 @@ function addToCart(picture, price) {
         </div>`;
         
     }
+    countItems();
     let catImageContainer = document.querySelectorAll(".cat-image-container");
     for(item of catImageContainer) {
         let imgNameId = String(item.querySelector("img").getAttribute("src"));
         let paragraphPart = item.parentElement.parentElement.querySelector(".price-container > .price-paragraph > .accent-price");
         paragraphPrices[imgNameId] = paragraphPart;
     }
-    console.log(itemsAdded);
-    console.log(pricesItems);
+    withOutItems()
 }
