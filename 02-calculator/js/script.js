@@ -1,0 +1,5 @@
+function mainScope() {
+    
+}
+
+mainScope();
