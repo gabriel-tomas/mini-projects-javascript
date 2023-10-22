@@ -6,18 +6,34 @@
 :root {
     --color0: rgb(61, 61, 61);
     --color1: rgb(228, 228, 228);
+    --color2: rgb(244, 244, 244);
     --text-color: black;
 }
 
-html, button {
+html {
+    font-family: sans-serif;
+}
+
+button, .result {
     font-size: clamp(36px, 4vw, 50px);
 }
 
 body {
     background-color: var(--color0);
-    height: 100vh;
+    height: 100svh;
     display: grid;
-    grid-template-rows: .3fr 4fr;
+    grid-template-rows: .1fr 4fr;
+}
+
+header {
+    color: white;
+    padding: 10px 1%;
+    background-color: var(--color2);
+}
+
+header h1 {
+    font-size: 1.7rem;
+    color: var(--text-color);
 }
 
 header, header button {
@@ -28,8 +44,8 @@ header, header button {
 
 #light-dark-mode-button {
     background-color: white;
-    height: 40px;
-    width: 100px;
+    height: 33px;
+    width: 70px;
     border-radius: 100px;
     position: relative;
 }
@@ -37,10 +53,10 @@ header, header button {
 #light-dark-mode-button > .selector-dark-light {
     height: 100%;
     background-color: black;
-    width: 40px;
+    width: 33px;
     border-radius: 100%;
     position: absolute;
-    right: calc(100% -40px);
+    right: calc(100% -33px);
     transition: 200ms right, 200ms left;
 }
 
