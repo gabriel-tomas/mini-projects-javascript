@@ -6,6 +6,7 @@
 :root {
     --color0: rgb(61, 61, 61);
     --color1: rgb(228, 228, 228);
+    --text-color: black;
 }
 
 html, button {
@@ -15,12 +16,38 @@ html, button {
 body {
     background-color: var(--color0);
     height: 100vh;
+    display: grid;
+    grid-template-rows: .3fr 4fr;
+}
+
+header, header button {
+    display: flex;
+    justify-content: space-between;
+    font-size: .3rem;
+}
+
+#light-dark-mode-button {
+    background-color: white;
+    height: 40px;
+    width: 100px;
+    border-radius: 100px;
+    position: relative;
+}
+
+#light-dark-mode-button > .selector-dark-light {
+    height: 100%;
+    background-color: black;
+    width: 40px;
+    border-radius: 100%;
+    position: absolute;
+    right: calc(100% -40px);
+    transition: 200ms right, 200ms left;
 }
 
 main {
     height: 100%;
     display: grid;
-    grid-template-rows: 1fr 4fr;
+    grid-template-rows: 1fr 3fr;
 }
 
 .result {
@@ -34,6 +61,10 @@ main {
     display: grid;
     grid-template-columns: 4fr 1fr;
     gap: 1px;
+}
+
+.container-math-buttons button {
+    color: var(--text-color);
 }
 
 .container-number-buttons {

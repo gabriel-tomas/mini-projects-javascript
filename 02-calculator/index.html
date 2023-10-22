@@ -7,9 +7,19 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <header>
+        <div>
+            <h1>Calculator</h1>
+        </div>
+        <div class="light-dark-mode-container">
+            <button id="light-dark-mode-button">
+                <div class="selector-dark-light"></div>
+            </button>
+        </div>
+    </header>
     <main>
         <div class="result" id="result-campo">
-            <p><</p>
+            <p></p>
         </div>
         <div class="container-math-buttons">
             <div class="container-number-buttons">
@@ -34,5 +44,6 @@
         </div>
     </main>
     <script src="js/calculator.js"></script>
+    <script src="js/animation-dark-light-button.js"></script>
 </body>
 </html>
