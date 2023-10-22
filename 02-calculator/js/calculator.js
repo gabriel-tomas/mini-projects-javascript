@@ -76,17 +76,19 @@ function mainScope() {
                 this.displayNumbers += text;
                 resultCampo.innerHTML = this.displayNumbers;
             } else if(this.signs.indexOf(text) != -1) {
-                if(this.SignsToDo.length < 2) {
+                if(this.displayNumbers !== "") {
+                    this.numbers.push(Number(this.displayNumbers));
+                }
+                if(this.SignsToDo.length < 2 && this.numbers.length !== 0) {
                     this.SignsToDo.push(text);
                     console.log("signstodo = ", this.SignsToDo);
                     this.actualSignOperation = this.SignsToDo[0];
                 }
-                if(this.displayNumbers != "") {
-                    this.numbers.push(Number(this.displayNumbers));
-                }
                 this.displayNumbers = "";
             } else if(text === "=") {
-                this.numbers.push(Number(this.displayNumbers));
+                if(this.displayNumbers !== "") {
+                    this.numbers.push(Number(this.displayNumbers));
+                }
                 this.displayNumbers = "";
                 this.actualSignOperation = this.SignsToDo[0];
                 console.log("sinal atual: ", this.actualSignOperation);
