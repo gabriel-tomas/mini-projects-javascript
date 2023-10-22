@@ -68,6 +68,7 @@ function mainScope() {
         signs: ["*", "-", "+"],
         actualSignOperation: null,
         numbers: [],
+        SignsToDo: [],
 
         postExpression(text) {
             console.log(text);
@@ -75,19 +76,25 @@ function mainScope() {
                 this.displayNumbers += text;
                 resultCampo.innerHTML = this.displayNumbers;
             } else if(this.signs.indexOf(text) != -1) {
-                this.actualSignOperation = text;
-                
-                this.numbers.push(Number(this.displayNumbers));
+                if(this.SignsToDo.length < 2) {
+                    this.SignsToDo.push(text);
+                    console.log("signstodo = ", this.SignsToDo);
+                    this.actualSignOperation = this.SignsToDo[0];
+                }
+                if(this.displayNumbers != "") {
+                    this.numbers.push(Number(this.displayNumbers));
+                }
                 this.displayNumbers = "";
             } else if(text === "=") {
                 this.numbers.push(Number(this.displayNumbers));
-    
                 this.displayNumbers = "";
+                this.actualSignOperation = this.SignsToDo[0];
+                console.log("sinal atual: ", this.actualSignOperation);
+                console.log("signstodo depois do =", this.SignsToDo);
+                console.log("numeros para calcular:", this.numbers);
             }
 
-            console.log(this.numbers);
-            console.log(this.actualSignOperation);
-
+            console.log("numeros disponiveis", this.numbers);
             if(this.numbers.length === 2) {
                 if(this.actualSignOperation === "+") {
                     this.resultado = this.add(this.numbers[0], this.numbers[1]);
@@ -105,6 +112,9 @@ function mainScope() {
                     this.numbers = [this.resultado];
                     console.log(this.numbers);
                 }
+                this.SignsToDo.shift();
+                console.log("sinais restantes: ", this.SignsToDo);
+                console.log("numeros restentas: ", this.numbers);
             }
         },
 
