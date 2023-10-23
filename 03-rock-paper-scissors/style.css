@@ -1,0 +1,57 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    height: 100svh;
+    display: flex;
+    align-items: center;
+}
+
+.game-container {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.cpu .inverted-image {
+    transform: rotateY(180deg);
+}
+
+.cpu .ajust-right {
+    display: flex;
+    justify-content: right;
+}
+
+.main-hand.reverse-animation {
+    animation: waitToThrowReverse 1s 10;
+}
+
+.main-hand {
+    animation: waitToThrow 1s 10;
+}
+
+@keyframes waitToThrowReverse {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(-10deg) translateY(-20px);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+@keyframes waitToThrow {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(10deg) translateY(-20px);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
