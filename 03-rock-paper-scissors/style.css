@@ -3,19 +3,38 @@
     padding: 0;
 }
 
+html {
+    overflow: hidden;
+}
+
 body {
     height: 100svh;
     display: flex;
     align-items: center;
 }
 
+button {
+    border: none;
+}
+
 .game-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    align-items: center;
 }
 
-.cpu .inverted-image {
+.main-hand.inverted {
+    display: flex;
+    align-items: flex-end;
+    height: 93px;
+}
+
+.main-hand.inverted {
+    justify-content: right;
+}
+
+.player .inverted-image {
     transform: rotateY(180deg);
 }
 
@@ -24,12 +43,46 @@ body {
     justify-content: right;
 }
 
-.main-hand.reverse-animation {
-    animation: waitToThrowReverse 1s 10;
+.run-reverse-animation {
+    animation: waitToThrowReverse 1s 3;
 }
 
-.main-hand {
-    animation: waitToThrow 1s 10;
+.run-animation {
+    animation: waitToThrow 1s 3;
+}
+
+.second-hand, .second-hand-reverse {
+    transition: 500ms transform;
+}
+
+.second-hand {
+    transform: translateX(calc(50vw + 433px));
+}
+
+.second-hand-reverse {
+    transform: translateX(calc(-50vw - 433px));
+}
+
+.hand-back {
+    transform: translateX(0px);
+}
+
+
+.player-escolha {
+    position: fixed;
+    left: 50vw;
+    bottom: 5%;
+    transform: translateX(-60%);
+    display: flex;
+    gap: 10%;
+}
+
+.player-escolha img {
+    transform: rotate(-90deg);
+}
+.player-escolha button {
+    height: 150px;
+    width: 150px;
 }
 
 @keyframes waitToThrowReverse {
