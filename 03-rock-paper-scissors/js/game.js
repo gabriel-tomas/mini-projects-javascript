@@ -27,7 +27,9 @@ function gameScope() {
         resetImgsHands();
         repeatHandAnimation();
         setTimeout(function(){removeAddScndHand(false)}, 2900);
-        game(choice, cpuEscolha);
+        const [text, winner] = game(choice, cpuEscolha);
+        const [p1, br, p2] = createElements(text, winner);
+        showWinner(p1, br, p2);
     }
 
     function removeAddScndHand(flag) {
@@ -72,24 +74,53 @@ function gameScope() {
         cpuHand.src = cpuImgs[cpuChoice];
     }
 
+    function showWinner(p1, br, p2) {
+        const titleWinner = document.querySelector(".winner-container > h1");
+
+        titleWinner.innerHTML = "";
+        titleWinner.appendChild(p1);
+        titleWinner.appendChild(br);
+        titleWinner.appendChild(p2);
+    }
+
+    function createElements(text, winner) {
+        const p1 = document.createElement("p");
+        const br = document.createElement("br");
+        const p2 = document.createElement("p");
+
+        p1.innerHTML = `${text}`;
+        p2.innerHTML = `Ganhador: ${winner}`;
+
+        return [p1, br, p2];
+    }
+
     function game(playerChoice, cpuChoice){
-        let text = "";
+        let text;
+        let winner;
+
         if(playerChoice === cpuChoice) {
             text = "EMPATE";
+            winner = "";
         } else if(playerChoice === 1 && cpuChoice === 2) {
             text = "PERDEU";
+            winner = "CPU"
         } else if(playerChoice === 1 && cpuChoice === 3) {
             text = "GANHOU";
+            winner = "Jogador";
         } else if(playerChoice === 2 && cpuChoice === 1) {
             text = "GANHOU";
+            winner = "Jogador";
         } else if(playerChoice === 2 && cpuChoice === 3) {
             text = "PERDEU";
+            winner = "CPU";
         } else if(playerChoice === 3 && cpuChoice === 1) {
             text = "PERDEU"; 
+            winner = "CPU";
         } else if(playerChoice === 3 && cpuChoice === 2) {
             text = "GANHOU"; 
+            winner = "Jogador";
         }
-        console.log(text);
+        return [text, winner];
     }
 }
 

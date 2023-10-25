@@ -5,6 +5,7 @@
 
 html {
     overflow: hidden;
+    font-family: sans-serif;
 }
 
 body {
@@ -15,6 +16,18 @@ body {
 
 button {
     border: none;
+}
+
+.winner-container {
+    position: fixed;
+    top: 10%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: clamp(1rem, .5vw + 1rem, 2rem);
+}
+
+.winner-container > h1 {
+    text-align: center;
 }
 
 .game-container {
@@ -72,17 +85,36 @@ button {
     position: fixed;
     left: 50vw;
     bottom: 5%;
-    transform: translateX(-60%);
+    transform: translateX(-50%);
     display: flex;
-    gap: 10%;
+    gap: 5%;
+    max-width: 500px;
 }
 
 .player-escolha img {
     transform: rotate(-90deg);
 }
+
 .player-escolha button {
-    height: 150px;
-    width: 150px;
+    height: clamp(50px, 20vw, 150px);
+    width: clamp(50px, 20vw, 150px);
+    border-radius: 10px;
+}
+
+.player-escolha button img {
+    width: 50%;
+}
+
+.rock-button {
+    background-color: rgb(177, 132, 73);
+}
+
+.paper-button {
+    background-color: rgb(80, 177, 73);
+}
+
+.scissors-button {
+    background-color: rgb(73, 94, 177);
 }
 
 @keyframes waitToThrowReverse {
@@ -106,5 +138,21 @@ button {
     }
     100% {
         transform: rotate(0deg);
+    }
+}
+
+@media screen and (max-width: 926px) {
+    .game-container {
+        margin-top: 10%;
+    }
+
+    .cpu {
+        position: absolute;
+        right: 55vw;
+    }
+    
+    .player {
+        position: absolute;
+        left: 55vw;
     }
 }
