@@ -90,21 +90,27 @@
                 const parentForecast = this.createEl(undefined, undefined, "container-forecast");
                 parentForecast.appendChild(this.createEl("button", "Previsão", "btn-show-forecast"));
                 const parentDays = this.createEl("ul", undefined, "container-days");
-                const parentDayItemInfos = this.createEl("li", undefined, "day-item-infos");
-                parentDayItemInfos.appendChild(this.createEl("span", `Dia: ${this.forecast[getIndexForecastDay.next().value].day}` ,"day"));
-                const parentTempWind2 = this.createEl(undefined, undefined, "container-temp-wind");
-                parentTempWind2.appendChild(this.createEl("span", `Temperatura: ${this.forecast[getIndexForecastDay.next().value].temperature}` ,"span-1"));
-                parentTempWind2.appendChild(this.createEl("span", `Temperatura: ${this.forecast[getIndexForecastDay.next().value].wind}` ,"span-1"));
-                parentDayItemInfos.appendChild(parentTempWind2);
-                parentDays.appendChild(parentDayItemInfos);
+                for(let i = 0; i < 3; i++){
+                    parentDays.appendChild(this.createDayItemInfo(getIndexForecastDay.next().value));
+                }
                 parentForecast.appendChild(parentDays);
-                
                 parentWeatherCardInfos.appendChild(header);
                 parentWeatherCardInfos.appendChild(h2Description);
                 parentWeatherCardInfos.appendChild(parentTempWind);
                 parentWeatherCardInfos.appendChild(parentForecast);
 
                 return parentWeatherCardInfos;
+            },
+
+            createDayItemInfo(getIndexForecastDay) {
+                const parentDayItemInfos = this.createEl("li", undefined, "day-item-infos");
+                parentDayItemInfos.appendChild(this.createEl("span", `Dia: ${this.forecast[getIndexForecastDay].day}` ,"day"));
+                const parentTempWind2 = this.createEl(undefined, undefined, "container-temp-wind");
+                parentTempWind2.appendChild(this.createEl("span", `Temperatura: ${this.forecast[getIndexForecastDay].temperature}` ,"span-1"));
+                parentTempWind2.appendChild(this.createEl("span", `Temperatura: ${this.forecast[getIndexForecastDay].wind}` ,"span-1"));
+                parentDayItemInfos.appendChild(parentTempWind2);
+
+                return parentDayItemInfos;
             },
 
             addToContainerResults(card) {
