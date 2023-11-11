@@ -1,6 +1,5 @@
 (() => {
     const inputCity = document.querySelector("#input-city");
-    
 
     inputCity.addEventListener("keypress", (e) => {
         if(e.key == "Enter") {
@@ -8,7 +7,7 @@
             getWeather(city, createWeatherCard);
         }
     });
-
+    
     function getWeather(city, callback) {
         const urlWeatherApi = `https://goweather.herokuapp.com/weather/${city}`;
         
@@ -22,29 +21,6 @@
         );
     }
 
-    //{
-    //            "temperature": "+28 °C",
-    //            "wind": "17 km/h",
-    //            "description": "Partly cloudy",
-    //            "forecast": [
-    //                {
-    //                    "day": "1",
-    //                    "temperature": "+29 °C",
-    //                    "wind": "19 km/h"
-    //                },
-    //                {
-    //                    "day": "2",
-    //                    "temperature": "31 °C",
-    //                    "wind": "22 km/h"
-    //                },
-    //                {
-    //                    "day": "3",
-    //                    "temperature": " °C",
-    //                    "wind": "21 km/h"
-    //                }
-    //            ]
-    //        }
-
     function createWeatherCard(args) {
         return {
             city: inputCity.value,
@@ -56,6 +32,7 @@
             createCard() {
                 const card = this.createTreeEl();
                 this.addToContainerResults(card);
+                setTimeout(() => this.styleAddClass(card, "opcty-1"), 1);
             },
 
             createEl(el = "div", content, className) {
@@ -88,11 +65,14 @@
                 parentTempWind.appendChild(this.createEl("span", `Vento: ${this.wind}`, "span-0"));
 
                 const parentForecast = this.createEl(undefined, undefined, "container-forecast");
-                parentForecast.appendChild(this.createEl("button", "Previsão", "btn-show-forecast"));
+                const btnShowForecast = this.createEl("button", "Previsão", "btn-show-forecast");
+                parentForecast.appendChild(btnShowForecast);
                 const parentDays = this.createEl("ul", undefined, "container-days");
                 for(let i = 0; i < 3; i++){
                     parentDays.appendChild(this.createDayItemInfo(getIndexForecastDay.next().value));
                 }
+                this.hideAndShowForecast(btnShowForecast, parentDays);
+
                 parentForecast.appendChild(parentDays);
                 parentWeatherCardInfos.appendChild(header);
                 parentWeatherCardInfos.appendChild(h2Description);
@@ -107,7 +87,7 @@
                 parentDayItemInfos.appendChild(this.createEl("span", `Dia: ${this.forecast[getIndexForecastDay].day}` ,"day"));
                 const parentTempWind2 = this.createEl(undefined, undefined, "container-temp-wind");
                 parentTempWind2.appendChild(this.createEl("span", `Temperatura: ${this.forecast[getIndexForecastDay].temperature}` ,"span-1"));
-                parentTempWind2.appendChild(this.createEl("span", `Temperatura: ${this.forecast[getIndexForecastDay].wind}` ,"span-1"));
+                parentTempWind2.appendChild(this.createEl("span", `Vento: ${this.forecast[getIndexForecastDay].wind}` ,"span-1"));
                 parentDayItemInfos.appendChild(parentTempWind2);
 
                 return parentDayItemInfos;
@@ -117,6 +97,18 @@
                 const containerResults = document.querySelector(".container-search-results");
 
                 containerResults.appendChild(card);
+            },
+            
+            styleAddClass(el, attributeName) {
+                el.classList.add(attributeName);
+            },
+
+            hideAndShowForecast(el, containerDays) {
+                el.addEventListener("click", () => {
+                    const computedStyleDisplay = getComputedStyle(containerDays).display;
+            
+                    computedStyleDisplay === "none"? containerDays.style.display = "block" : containerDays.style.display = "none";
+                });
             }
         }
     }
