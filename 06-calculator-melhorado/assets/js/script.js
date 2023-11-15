@@ -11,7 +11,7 @@
     btnMenu.addEventListener("click", () => {
         const menu = document.querySelector(".container-menu");
         
-        menu.style.display === "block"? menu.style.display = "none" : menu.style.display = "block";
+        menu.style.display === "flex"? menu.style.display = "none" : menu.style.display = "flex";
     });
 
     function Calc() {
