@@ -1,17 +1,10 @@
 (() => {
     const containerBtns = document.querySelector(".container-btns");
-    const btnMenu = document.querySelector(".btn-menu");
 
     containerBtns.addEventListener("click", e => {
         const el = e.target;
         const calc = new Calc();
         calc.btnClick = el;
-    });
-
-    btnMenu.addEventListener("click", () => {
-        const menu = document.querySelector(".container-menu");
-        
-        menu.style.display === "flex"? menu.style.display = "none" : menu.style.display = "flex";
     });
 
     function Calc() {
@@ -48,5 +41,5 @@
                 };
             }
         });
-    }
+    };
 })();
