@@ -16,6 +16,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    transition: 200ms background-color;
 }
 
 html, button, input {
@@ -32,6 +33,7 @@ body {
     height: 100svh;
     background-color: var(--main-background);
     position: relative;
+    
 }
 
 header {
