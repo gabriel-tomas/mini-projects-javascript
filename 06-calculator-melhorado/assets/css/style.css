@@ -3,8 +3,8 @@
 :root {
     --primary-color: #4689dbb0;
     --secondary-color: #2E59C9;
-    --dark-background: #0D1624;
     --white-background: #e7e4f2d8;
+    --main-background: #0D1624;
 
     --main-font: "Lato", sans-serif;
 
@@ -30,7 +30,7 @@ li {
 
 body {
     height: 100svh;
-    background-color: var(--dark-background);
+    background-color: var(--main-background);
     position: relative;
 }
 
@@ -83,7 +83,7 @@ main > .container-btns {
     background-color: #52A0FF;
     margin: 18.469px;
     padding: 9.328px 23.328px;
-    border-radius: var( --menu);
+    border-radius: var(--menu);
     z-index: 10;
     width: calc(46.797px + (23.328px * 2));
     transition: width 200ms;
@@ -126,10 +126,10 @@ main > .container-btns {
     gap: 3.5%;
 }
 
-.btn-dark-slctr {
+.slide-btn {
     width: 70px;
     height: 30px;
-    background-color: var(--dark-background);
+    background-color: var(--main-background);
     border-radius: 100px;
     position: relative;
 }
@@ -141,7 +141,7 @@ main > .container-btns {
     border-radius: 100px;
     position: absolute;
     top: 0px;
-    left: 0px;
+    left: calc(70px - 30px);
     transition: left 100ms;
 }
 
