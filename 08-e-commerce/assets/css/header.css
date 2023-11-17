@@ -1,0 +1,45 @@
+header {
+    display: flex;
+    justify-content: space-between;
+    padding: clamp(1rem, 0.694rem + 1.633vw, 2rem);
+}
+
+header > * {
+    flex-basis: 33%;
+}
+
+header .container-search {
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 3%;
+}
+
+header #search-box {
+    background-color: var(--secondary);
+    height: 30px;
+    padding: clamp(0.8rem, 0.667rem + 0.667vw, 1.2rem);
+    width: 0%;
+    visibility: hidden;
+    transition: width 200ms, opacity 250ms;
+}
+
+header .search-btn {
+    position: relative;
+}
+
+header .right-arrow {
+    position: absolute;
+    left: 0%;
+    top: 2px;
+    opacity: 0;
+    transition: left 200ms, opacity 200ms;
+}
+
+header .container-title {
+    text-align: center;
+}
+
+header .container-cart {
+    text-align: right;
+}
