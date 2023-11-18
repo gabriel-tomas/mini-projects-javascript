@@ -38,3 +38,39 @@
 .font-size-xxxl {
     font-size: var(--font-size-xxxl);
 }
+
+.font-wght-100 {
+    font-weight: 100;
+}
+
+.font-wght-200 {
+    font-weight: 200;
+}
+
+.font-wght-300 {
+    font-weight: 300;
+}
+
+.font-wght-400 {
+    font-weight: 400;
+}
+
+.font-wght-500 {
+    font-weight: 500;
+}
+
+.font-wght-600 {
+    font-weight: 600;
+}
+
+.font-wght-700 {
+    font-weight: 700;
+}
+
+.font-wght-800 {
+    font-weight: 800;
+}
+
+.font-wght-900 {
+    font-weight: 900;
+}
