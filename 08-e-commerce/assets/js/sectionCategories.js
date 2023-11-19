@@ -1,10 +1,10 @@
 (() => {
     function createCategory(text) {
         (function create() {
-            const sectionCategories = document.querySelector(".section-categories");
+            const containerCategories = document.querySelector(".container-categories");
             const tree = createTreeEl();
     
-            sectionCategories.appendChild(tree);
+            containerCategories.appendChild(tree);
         })();
     
         function createTreeEl() {
@@ -12,8 +12,8 @@
             parentDiv.classList.add("container-category");
             const btn = document.createElement("button");
             btn.classList.add("btn-category");
-            const h1 = document.createElement("h1");
-            h1.classList.add("font-size-base");
+            const h1 = document.createElement("h2");
+            h1.classList.add("font-size-base", "font-wght-400");
             h1.innerText = text;
             btn.appendChild(h1);
             parentDiv.appendChild(btn);
