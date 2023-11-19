@@ -6,6 +6,8 @@
     --accent: #769537;
 
     --wth-color: #fff;
+    --neutral-1: rgba(131, 131, 131, 0.12);
+    --neutral-2: rgba(131, 131, 131, 0.3);
 }
 
 .background-white {

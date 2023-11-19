@@ -1,7 +1,6 @@
 .container-choicer-for-you {
     background-color: var(--background);
-    height: 80vh;
-    height: 80svh;
+    height: fit-content;
     width: 80vw;
     width: min(80svw, 820px);
     position: absolute;
@@ -9,7 +8,16 @@
     left: 50%;
     transform: translate(-50%, -50%);
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.37);
-    overflow:auto;
+}
+
+.container-choicer-for-you > .container-title {
+    padding-inline: clamp(1rem, 0.667rem + 1.667vw, 2rem);
+    padding-block: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+    text-align: center;
+}
+
+.container-choicer-for-you > .container-title > h1 {
+    color: var(--text);
 }
 
 .container-options {
@@ -19,6 +27,20 @@
     gap: 10px;
     padding: clamp(1rem, 0.667rem + 1.667vw, 2rem);
     overflow: auto;
+    height: calc(clamp(400px, 80vh, 720px) - (32.975px + (40.450px * 2) + 50px));
+}
+
+.container-options::-webkit-scrollbar, .container-options::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}
+
+.container-options::-webkit-scrollbar {
+    width: 10px;
+    background-color: var(--neutral-1);
+}
+
+.container-options::-webkit-scrollbar-thumb {
+    background-color: var(--neutral-2);
 }
 
 .container-options > label {
@@ -47,4 +69,15 @@ label:has(.input-choicer-category:checked) {
 label:has(.input-choicer-category:checked) span {
     color: var(--wth-color);
     font-weight: 700;
+}
+
+.container-btn-save {
+    display: flex;
+    justify-content: center;
+    padding-block: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+}
+
+.btn-save-interests {
+    width: 30%;
+    color: var(--text);
 }
