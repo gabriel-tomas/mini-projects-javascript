@@ -49,16 +49,16 @@ class ProductsRoutes {
     }
 
     getAllProducts(callback) {
-        Products.fetchRoute(this.allProductsRoute, callback);
+        ProductsRoutes.fetchRoute(this.allProductsRoute, callback);
     }
 
     setSearchProducts(input) {
         this.setSearchRoute = input;
-        Products.fetchRoute(this.setSearchRoute, callback);
+        ProductsRoutes.fetchRoute(this.setSearchRoute, callback);
     }
     
     getAllCategories(callback) {
-        Products.fetchRoute(this.allCategoriesRoute, callback);
+        ProductsRoutes.fetchRoute(this.allCategoriesRoute, callback);
     }
 }
 
