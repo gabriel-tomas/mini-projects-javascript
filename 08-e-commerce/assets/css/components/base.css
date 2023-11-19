@@ -1,0 +1,24 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, button, input {
+    font-family: var(--title-font);
+    font-size: 16px;
+    color: var(--text);
+}
+
+button, input {
+    border: none;
+    background-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+input:focus {
+    outline: none;
+}

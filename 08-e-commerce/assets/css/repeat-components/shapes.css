@@ -1,3 +1,7 @@
 .radius-total {
     border-radius: 1000px;
 }
+
+.space-sides {
+    margin-inline: clamp(1rem, 0.333rem + 3.333vw, 3rem);
+}
