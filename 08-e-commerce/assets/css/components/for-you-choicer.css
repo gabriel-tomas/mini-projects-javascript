@@ -1,0 +1,50 @@
+.container-choicer-for-you {
+    background-color: var(--background);
+    height: 80vh;
+    height: 80svh;
+    width: 80vw;
+    width: min(80svw, 820px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.37);
+    overflow:auto;
+}
+
+.container-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: clamp(1rem, 0.667rem + 1.667vw, 2rem);
+    overflow: auto;
+}
+
+.container-options > label {
+    background-color: var(--secondary);
+    height: clamp(3.25rem, 5.208rem + 5.208vw, 9.375rem);
+    width: clamp(3.25rem, 5.208rem + 5.208vw, 9.375rem);
+    position: relative;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+}
+
+.container-options span {
+    display: block;
+    text-align: center;
+}
+
+.input-choicer-category {
+    display: none;
+}
+
+label:has(.input-choicer-category:checked) {
+    background-color: var(--primary);
+}
+
+label:has(.input-choicer-category:checked) span {
+    color: var(--wth-color);
+    font-weight: 700;
+}

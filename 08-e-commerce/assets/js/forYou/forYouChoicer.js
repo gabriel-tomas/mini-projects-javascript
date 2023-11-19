@@ -1,5 +1,5 @@
 (() => {
-    class ForYou {
+    class ForYouChoicer {
         createContainerChoicer() { 
             const divContainerChoicer = document.createElement("div");
             divContainerChoicer.classList.add("container-choicer-for-you");
@@ -19,7 +19,7 @@
             function createTreeElLabels(spanText) {
                 const parentLabel = document.createElement("label");
                 const spanEl = document.createElement("span");
-                spanEl.classList.add("category-name");
+                spanEl.classList.add("category-name", "font-size-base", "font-wght-400");
                 spanEl.innerText = spanText;
                 const inputCategoryChoicer = document.createElement("input");
                 inputCategoryChoicer.setAttribute("type", "checkbox");
@@ -39,6 +39,6 @@
         
     }
 
-    const forYou = new ForYou();
-    console.log(forYou.createContainerChoicer());
+    const forYouChoicer = new ForYouChoicer();
+    forYouChoicer.createContainerChoicer(); // só criar quando o usuário já não tiver escolhido
 })();
