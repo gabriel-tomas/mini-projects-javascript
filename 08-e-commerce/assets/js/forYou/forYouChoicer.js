@@ -35,12 +35,19 @@
                 const divContainerChoicer = document.createElement("div");
                 divContainerChoicer.classList.add("container-choicer-for-you");
 
-                const divH1 = document.createElement("div");
-                divH1.classList.add("container-title");
+                const divTop = document.createElement("div");
+                divTop.classList.add("container-top");
                 const h1 = document.createElement("h1");
                 h1.innerText = "Choose your interests";
-                //h1.classList.add("");
-                divH1.appendChild(h1);
+                const btnClose = document.createElement("button");
+                btnClose.classList.add("btn-close-choicer");
+                btnClose.addEventListener("click", destroyContainerChoicer);
+                const spanIconClose = document.createElement("span");
+                spanIconClose.classList.add("material-symbols-outlined", "font-size-xl");
+                spanIconClose.innerText = "close";
+                btnClose.appendChild(spanIconClose);
+                divTop.appendChild(h1);
+                divTop.appendChild(btnClose);
 
                 const btnSaveInterests = document.createElement("button");
                 btnSaveInterests.innerText = "Confirm";
@@ -52,7 +59,7 @@
 
                 const containerOptions = document.createElement("div");
                 containerOptions.classList.add("container-options");
-                divContainerChoicer.appendChild(divH1);
+                divContainerChoicer.appendChild(divTop);
                 divContainerChoicer.appendChild(containerOptions);
                 divContainerChoicer.appendChild(containerBtnSave);
 
@@ -80,6 +87,7 @@
         }
     }
 
+    // starter
     const forYouChoicer = new ForYouChoicer();
-    forYouChoicer.createContainerChoicer(); // só criar quando o usuário já não tiver escolhido
+    if(!localStorageGet("interestedItems")) forYouChoicer.createContainerChoicer();
 })();

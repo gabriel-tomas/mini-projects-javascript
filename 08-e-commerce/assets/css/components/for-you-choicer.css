@@ -10,13 +10,20 @@
     box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.37);
 }
 
-.container-choicer-for-you > .container-title {
+.container-choicer-for-you > .container-top {
     padding-inline: clamp(1rem, 0.667rem + 1.667vw, 2rem);
     padding-block: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
     text-align: center;
+    position: relative;
 }
 
-.container-choicer-for-you > .container-title > h1 {
+.container-choicer-for-you .btn-close-choicer {
+    position: absolute;
+    right: calc(clamp(1rem, 0.667rem + 1.667vw, 2rem) + 30px);
+    top: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+}
+
+.container-choicer-for-you > .container-top > h1 {
     color: var(--text);
 }
 
@@ -51,6 +58,7 @@
     display: grid;
     place-items: center;
     border-radius: 10px;
+    cursor: pointer;
 }
 
 .container-options span {

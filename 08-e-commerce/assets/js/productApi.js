@@ -35,7 +35,7 @@ class ProductsRoutes {
             },
             set: function(value) {
                 if(typeof value !== "string") return;
-                searchCategory = `${mainRoute}/products/category/${value}`;
+                searchCategory = `${this.mainRoute}/products/category/${value}`;
             }
         })
     }
@@ -52,13 +52,18 @@ class ProductsRoutes {
         ProductsRoutes.fetchRoute(this.allProductsRoute, callback);
     }
 
-    setSearchProducts(input) {
+    setSearchProducts(input, callback) {
         this.setSearchRoute = input;
         ProductsRoutes.fetchRoute(this.setSearchRoute, callback);
     }
     
     getAllCategories(callback) {
         ProductsRoutes.fetchRoute(this.allCategoriesRoute, callback);
+    }
+
+    setCategoryProducts(input, callback) {
+        this.setCategoryRoute = input;
+        ProductsRoutes.fetchRoute(this.setCategoryRoute, callback);
     }
 }
 
