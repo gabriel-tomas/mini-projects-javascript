@@ -64,6 +64,7 @@
 .container-options span {
     display: block;
     text-align: center;
+    word-break: break-all;
 }
 
 .input-choicer-category {
