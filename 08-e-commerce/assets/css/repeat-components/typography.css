@@ -76,3 +76,7 @@
 .font-wght-900 {
     font-weight: 900;
 }
+
+.normal-font {
+    font-family: var(--normal-font);
+}

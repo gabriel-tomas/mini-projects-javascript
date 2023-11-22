@@ -37,13 +37,24 @@
         }
         
         separateInterestItems(array) {
+            const rands = [randNum(), randNum(), randNum(), randNum(), randNum()]
+            const maxProductToAdd = 5;
+            let numRand = 0;
+
             for(let i in array) {
                 productsMethods.setCategoryProducts(array[i], e => {
-                    const rand = Math.round(Math.random() * (e.products.length - 0) + 0);
-                    for(let product of e.products) {
-                        this.addProductCard(product);
+                    for(let product in e.products) {
+                        if(product == rands[numRand]) {
+                            this.addProductCard(e.products[product])
+                            numRand++;
+                            if(numRand === maxProductToAdd) return;
+                        };
                     }
                 })
+            }
+
+            function randNum() {
+                return Math.round(Math.random() * (4 - 0) + 0);
             }
         }
 

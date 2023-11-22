@@ -13,8 +13,8 @@ class createProductCard {
         const containerAndThumb = this.containerAndThumb;
         const bottomInfo = this.bottomInfos;
 
-        divParent.appendChild(containerAndThumb);
-        divParent.appendChild(bottomInfo);
+        divParent.querySelector(".product-link").appendChild(containerAndThumb);
+        divParent.querySelector(".product-link").appendChild(bottomInfo);
 
         return divParent;
     }
@@ -30,7 +30,7 @@ class createProductCard {
 
         div.append(a);
 
-        return a;
+        return div;
     }
 
     get containerAndThumb() {
@@ -51,17 +51,18 @@ class createProductCard {
         const divTitle = document.createElement("div");
         divTitle.classList.add("container-title");
         const spanTitle = document.createElement("span");
+        spanTitle.classList.add("normal-font", "font-size-base");
         spanTitle.innerText = this.title;
         divTitle.appendChild(spanTitle);
 
         const divPriceAndOthers = document.createElement("div");
         divPriceAndOthers.classList.add("container-price-and-others");
         const spanPrice = document.createElement("span");
-        spanPrice.classList.add("span-price");
+        spanPrice.classList.add("span-price", "normal-font", "font-size-md");
         spanPrice.innerText = `$ ${this.price}`;
         const discount = document.createElement("span");
-        discount.classList.add("discount");
-        discount.innerText = `${this.discountPercentage} OFF`;
+        discount.classList.add("discount", "normal-font");
+        discount.innerText = `${this.discountPercentage}% OFF`;
         divPriceAndOthers.appendChild(spanPrice);
         divPriceAndOthers.appendChild(discount);
 
