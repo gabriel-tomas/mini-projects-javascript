@@ -1,5 +1,11 @@
 .section-for-you {
-   
+    
+}
+
+.section-for-you .see-more-for-you-products {
+    margin-top: .8rem;
+    float: right;
+    color: var(--text);
 }
 
 .for-you-products {

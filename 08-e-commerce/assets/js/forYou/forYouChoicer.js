@@ -38,6 +38,7 @@
                 const divTop = document.createElement("div");
                 divTop.classList.add("container-top");
                 const h1 = document.createElement("h1");
+                h1.classList.add("font-size-lg");
                 h1.innerText = "Choose your interests";
                 const btnClose = document.createElement("button");
                 btnClose.classList.add("btn-close-choicer");

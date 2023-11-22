@@ -9,3 +9,7 @@
 .space-top {
     margin-top: 2rem;
 }
+
+section .container-title {
+    margin-bottom: .8rem;
+}
