@@ -4,6 +4,8 @@
 @import url("repeat-components/shapes.css");
 @import url("repeat-components/buttons.css");
 
+@import url("repeat-components/products.css");
+
 /* componentes únicos */
 @import url("components/base.css");
 @import url("components/header.css");

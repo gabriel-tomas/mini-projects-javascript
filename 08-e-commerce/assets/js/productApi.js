@@ -48,8 +48,8 @@ class ProductsRoutes {
         });
     }
 
-    getAllProducts(callback) {
-        ProductsRoutes.fetchRoute(this.allProductsRoute, callback);
+    getAllProducts(skip=0, limit=30, callback) {
+        ProductsRoutes.fetchRoute(`${this.allProductsRoute}?skip=${skip}&limit=${limit}`, callback);
     }
 
     setSearchProducts(input, callback) {
