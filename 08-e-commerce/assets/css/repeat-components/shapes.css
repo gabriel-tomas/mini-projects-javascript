@@ -3,7 +3,12 @@
 }
 
 .space-sides {
-    margin-inline: clamp(1rem, 0.333rem + 3.333vw, 3rem);
+    padding-inline: clamp(1rem, 0.333rem + 3.333vw, 3rem);
+}
+
+.max-width-section-align {
+    max-width: 1280px;
+    margin-inline: auto;
 }
 
 .space-top {

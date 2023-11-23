@@ -22,7 +22,8 @@
 
 .container-categories > .container-category {
     background-color: var(--secondary);
-    height: clamp(6.125rem, 1.458rem + 8.333vw, 8.125rem);
+    min-width: clamp(6.125rem, 5.667rem + 2.292vw, 7.5rem);
+    min-height: clamp(6.125rem, 5.667rem + 2.292vw, 7.5rem);
     display: grid;
     place-items: center;
     border-radius: 17px;
@@ -33,8 +34,7 @@
 }
 
 .container-categories > .container-category h2 {
-    width: clamp(6.125rem, 1.458rem + 8.333vw, 8.125rem);
-    word-wrap: break-word;
+    word-break: break-all;
     color: var(--text);
     text-align: center;
 }

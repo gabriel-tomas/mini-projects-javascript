@@ -32,7 +32,7 @@
 
 .container-product {
     min-width: clamp(100px, 50vw, 380px);
-    height: fit-content;
+    height: auto;
     background-color: var(--neutral-0);
     border: 1px solid var(--background);
     border-radius: 15px;
