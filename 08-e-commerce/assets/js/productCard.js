@@ -10,9 +10,11 @@ class createProductCard {
 
     create() {
         const divParent = this.divParent;
+        const addTocartButton = this.addToCartButton;
         const containerAndThumb = this.containerAndThumb;
         const bottomInfo = this.bottomInfos;
 
+        divParent.appendChild(addTocartButton);
         divParent.querySelector(".product-link").appendChild(containerAndThumb);
         divParent.querySelector(".product-link").appendChild(bottomInfo);
 
@@ -21,7 +23,7 @@ class createProductCard {
 
     get divParent() {
         const div = document.createElement("div");
-        div.setAttribute("id", this.id);
+        div.setAttribute("product-id", this.id);
         div.classList.add("container-product");
         
         const a = document.createElement("a");
@@ -31,6 +33,35 @@ class createProductCard {
         div.append(a);
 
         return div;
+    }
+
+    get addToCartButton() {
+        const btn = document.createElement("button");
+        btn.classList.add("btn-add-to-cart", "radius-total");
+        
+        const span = document.createElement("span");
+        span.classList.add("material-symbols-outlined", "font-size-md");
+        span.innerText = "add_shopping_cart";
+
+        btn.appendChild(span);
+
+        btn.addEventListener("click", () => {
+            let oldValue;
+            oldValue = localStorageGet("cart-items");
+            console.log(oldValue, this.id);
+            if(oldValue === null) {
+                localStorageSave("cart-items", this.id);
+                return;
+            };
+
+            localStorageSave("cart-items", `${oldValue}, ${this.id}`);
+        })
+
+        function addCartElementId() {
+
+        }
+
+        return btn;
     }
 
     get containerAndThumb() {

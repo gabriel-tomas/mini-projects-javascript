@@ -4,6 +4,23 @@
     background-color: var(--neutral-0);
     border: 1px solid var(--background);
     border-radius: 15px;
+    position: relative;
+}
+
+.btn-add-to-cart {
+    position: absolute;
+    right: 0px;
+    top: 0px;
+    padding: clamp(0.6rem, 0.467rem + 0.667vw, 1rem);
+    background-color: var(--neutral-3);
+    backdrop-filter: opacity(0.3);
+    color: var(--accent);
+    margin-top: 15px;
+    margin-right: 15px;
+}
+
+.btn-add-to-cart > span {
+    font-weight: 300;
 }
 
 .container-thumbnail {
