@@ -37,7 +37,7 @@ class createProductCard {
 
     get addToCartButton() {
         const btn = document.createElement("button");
-        btn.classList.add("btn-add-to-cart", "radius-total");
+        btn.classList.add("btn-add-to-cart");
         
         const span = document.createElement("span");
         span.classList.add("material-symbols-outlined", "font-size-md");

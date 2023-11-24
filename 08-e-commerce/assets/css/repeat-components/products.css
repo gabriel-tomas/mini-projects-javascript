@@ -11,12 +11,13 @@
     position: absolute;
     right: 0px;
     top: 0px;
-    padding: clamp(0.6rem, 0.467rem + 0.667vw, 1rem);
+    padding: clamp(0.6rem, 0.267rem + 0.667vw, 0.8rem);
     background-color: var(--neutral-3);
     backdrop-filter: opacity(0.3);
-    color: var(--accent);
-    margin-top: 15px;
-    margin-right: 15px;
+    color: var(--text);
+    border-bottom-left-radius: 15px;
+    border-radius: 100px;
+    margin: clamp(0.6rem, 0.467rem + 0.667vw, 1rem);
 }
 
 .btn-add-to-cart > span {
