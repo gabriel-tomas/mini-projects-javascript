@@ -60,7 +60,7 @@
 
         addProductCard(productObj) {
             const forYouProducts = document.querySelector(".for-you-products");
-            const product = new createProductCard(productObj).create();
+            const product = new ProductCard(productObj).create();
             forYouProducts.appendChild(product);
         }
     }

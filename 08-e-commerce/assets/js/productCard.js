@@ -1,4 +1,4 @@
-class createProductCard {
+class ProductCard {
     constructor(product) {
         //console.log(product);
         this.thumbnail = product.thumbnail;
