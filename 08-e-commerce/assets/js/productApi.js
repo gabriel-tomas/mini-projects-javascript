@@ -22,6 +22,17 @@ class ProductsRoutes {
                 searchLink = `${this.mainRoute}/products/search?q=${value}`;
             }
         })
+        let singleId = null;
+        Object.defineProperty(this, "setSingleRoute", {
+            enumerable: true,
+            configurable: false,
+            get: function() {
+                return singleId;
+            },
+            set: function(id) { // https://dummyjson.com/products/2
+                singleId = `${this.mainRoute}/products/${id}`;
+            }
+        })
         Object.defineProperty(this, "allCategoriesRoute", {
             enumerable: true,
             writable: false,
@@ -64,6 +75,11 @@ class ProductsRoutes {
     setCategoryProducts(input, callback) {
         this.setCategoryRoute = input;
         ProductsRoutes.fetchRoute(this.setCategoryRoute, callback);
+    }
+
+    getSingleProduct(id, callback) {
+        this.setSingleRoute = id;
+        ProductsRoutes.fetchRoute(this.setSingleRoute, callback);
     }
 }
 
