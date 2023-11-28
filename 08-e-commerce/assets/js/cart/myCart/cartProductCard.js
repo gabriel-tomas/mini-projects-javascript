@@ -1,10 +1,10 @@
-
 class CartProductCard extends ProductCard {
-    constructor(product) {
+    constructor(product, quantity = 1) {
         super(product);
         this.brand = product.brand;
-        this.totalPrice = this.price;
-        this.quantity = 1;
+        this.quantity = quantity;
+        this.totalPrice = this.price * this.quantity;
+        console.log(this.totalPrice, this.quantity);
     }
 
     create() {
@@ -28,6 +28,7 @@ class CartProductCard extends ProductCard {
     get divTableParent() {
         const div = document.createElement("div");
         div.classList.add("item-cart");
+        div.setAttribute("product-id", this.id);
 
         const table = document.createElement("table");
         table.classList.add("table-product");
@@ -84,21 +85,56 @@ class CartProductCard extends ProductCard {
         }
         
         const quantity = () => {
+            const updateQuantityElText = function() {
+                spanQuantity.innerText = this.quantity;
+            }.bind(this);
+
+            const updateTotalPriceElText = function() {
+                this.tagPTotal.innerText = `Total: $ ${this.totalPrice}`;
+            }.bind(this);
+
+            const updateSpanTimesElText = function() {
+                this.spanTimes.innerText = `${this.quantity}x`;
+            }.bind(this);
+            
             const tdQuantity = document.createElement("td");
             tdQuantity.classList.add("td-quantity");
 
             const btnMinus = document.createElement("button");
             btnMinus.classList.add("btn-minus-product");
             btnMinus.innerText = "-";
-            //btnMinus.addEventListener("click", addOrSubtract(false)); << fazer func
-
+        
             const spanQuantity = document.createElement("span");
             spanQuantity.classList.add("span-quantity");
-            spanQuantity.innerText = "1";
+            updateQuantityElText();
 
             const btnPlus = document.createElement("button");
             btnPlus.classList.add("btn-plus-product");
             btnPlus.innerText = "+";
+
+            const addRemoveProduct = function(func) {
+                if(func === "add") {
+                    this.quantity++;
+                    this.totalPrice = this.price * this.quantity;
+                    updateTotalPriceElText();
+                    updateQuantityElText();
+                    updateSpanTimesElText();
+
+                } else if(func === "remove") {
+                    if(this.quantity <= 1) {
+                        btnMinus.style.pointerEvents = "none";
+                        return;
+                    };
+                    this.quantity--;
+                    this.totalPrice = this.price * this.quantity;
+                    updateTotalPriceElText();
+                    updateQuantityElText();
+                    updateSpanTimesElText();
+                }
+            }.bind(this);
+
+            btnMinus.addEventListener("click", () => {addRemoveProduct("remove")});
+            btnPlus.addEventListener("click", () => {addRemoveProduct("add")});
 
             tdQuantity.appendChild(btnMinus);
             tdQuantity.appendChild(spanQuantity);
@@ -112,16 +148,17 @@ class CartProductCard extends ProductCard {
             tdPrice.classList.add("td-price");
 
             const pValueTimes = document.createElement("p");
-            const span = document.createElement("span");
-            span.innerText = `1x`;
+            this.spanTimes = document.createElement("span");
+            this.spanTimes.innerText = `${this.quantity}x`;
             pValueTimes.innerText += ` $ ${this.price}`;
-            pValueTimes.insertAdjacentElement('afterbegin', span);;
+            pValueTimes.insertAdjacentElement('afterbegin', this.spanTimes);
 
-            const pTotal = document.createElement("p");
-            pTotal.innerText = `Total: $ ${this.totalPrice}`;
+            this.tagPTotal = document.createElement("p");
+            this.tagPTotal.classList.add("p-total");
+            this.tagPTotal.innerText = `Total: $ ${this.totalPrice}`;
 
             tdPrice.appendChild(pValueTimes);
-            tdPrice.appendChild(pTotal);
+            tdPrice.appendChild(this.tagPTotal);
 
             return tdPrice;
         }
