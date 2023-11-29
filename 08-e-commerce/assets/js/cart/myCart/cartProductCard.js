@@ -132,6 +132,8 @@ class CartProductCard extends ProductCard {
                     updateTotalPriceElText();
                     updateQuantityElText();
                     updateSpanTimesElText();
+                    const deleteCartItemLclStrg = ProductCard.deleteCartItemLclStrg.bind(this);
+                    deleteCartItemLclStrg();
                 }
             }.bind(this);
 

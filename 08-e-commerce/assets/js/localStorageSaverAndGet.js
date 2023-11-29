@@ -4,8 +4,8 @@ function localStorageSave(key, value) {
 
     value = JSON.stringify(value);
     localStorage.setItem(key, value);
-    console.log("Key:", key, "| value", value, "| > saved ");
-    console.log(`Type of key: ${typeof key}, Type of value ${typeof value}`);
+    /* console.log("Key:", key, "| value", value, "| > saved ");
+    console.log(`Type of key: ${typeof key}, Type of value ${typeof value}`); */
 }
 
 function localStorageGet(key) {

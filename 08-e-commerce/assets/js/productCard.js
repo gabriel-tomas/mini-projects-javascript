@@ -56,13 +56,29 @@ class ProductCard {
     static addCartItemLclStrg() {
         let oldValue;
         oldValue = localStorageGet("cart-items");
-        console.log(oldValue, this.id);
+
         if(oldValue === null) {
             localStorageSave("cart-items", this.id);
             return;
         };
 
         localStorageSave("cart-items", `${oldValue}, ${this.id}`);
+    }
+
+    static deleteCartItemLclStrg() {
+        let oldValue;
+        oldValue = localStorageGet("cart-items");
+        if(oldValue === null) {
+            return;
+        };
+
+        oldValue = oldValue.split(',');
+        oldValue = oldValue.map(value => value.trim());
+
+        oldValue.splice(oldValue.indexOf(String(this.id)), 1);
+        oldValue = oldValue.join(", ");
+
+        localStorageSave("cart-items", `${oldValue}`);
     }
 
     get containerAndThumb() {
