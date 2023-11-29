@@ -4,7 +4,6 @@ class CartProductCard extends ProductCard {
         this.brand = product.brand;
         this.quantity = quantity;
         this.totalPrice = this.price * this.quantity;
-        console.log(this.totalPrice, this.quantity);
     }
 
     create() {
@@ -16,7 +15,6 @@ class CartProductCard extends ProductCard {
         div.querySelector("table").appendChild(trAndTds);
 
         this.addToParent(div);
-        console.log(this);
     }
 
     addToParent(product) {
