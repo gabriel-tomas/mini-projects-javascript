@@ -119,6 +119,8 @@ class CartProductCard extends ProductCard {
                     updateTotalPriceElText();
                     updateQuantityElText();
                     updateSpanTimesElText();
+                    const addCartItemLclStrg = ProductCard.addCartItemLclStrg.bind(this);
+                    addCartItemLclStrg();
 
                 } else if(func === "remove") {
                     if(this.quantity <= 1) {

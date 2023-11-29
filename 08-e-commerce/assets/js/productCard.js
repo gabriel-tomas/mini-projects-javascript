@@ -46,22 +46,23 @@ class ProductCard {
         btn.appendChild(span);
 
         btn.addEventListener("click", () => {
-            let oldValue;
-            oldValue = localStorageGet("cart-items");
-            console.log(oldValue, this.id);
-            if(oldValue === null) {
-                localStorageSave("cart-items", this.id);
-                return;
-            };
-
-            localStorageSave("cart-items", `${oldValue}, ${this.id}`);
+            const addCartItemLclStrg = ProductCard.addCartItemLclStrg.bind(this);
+            addCartItemLclStrg();
         })
 
-        function addCartElementId() {
-
-        }
-
         return btn;
+    }
+
+    static addCartItemLclStrg() {
+        let oldValue;
+        oldValue = localStorageGet("cart-items");
+        console.log(oldValue, this.id);
+        if(oldValue === null) {
+            localStorageSave("cart-items", this.id);
+            return;
+        };
+
+        localStorageSave("cart-items", `${oldValue}, ${this.id}`);
     }
 
     get containerAndThumb() {
