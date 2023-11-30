@@ -2,12 +2,12 @@ import getQuantityItems from "../myCart/getQuantityItems.js";
 import getProductsId from "../myCart/getProductsId.js";
 
 function Summary(total) {
-    this.total = total;
+    this.total = String(total.toFixed(2)).replace(".", ",");
     Object.defineProperty(this, "inCash", {
         enumerable: true,
         configurable: false,
         get: function() {
-            const inCash = total - (total * .15);
+            const inCash = String((total - (total * .15)).toFixed(2)).replace(".", ",");
             return inCash;
         }
     })
@@ -15,19 +15,36 @@ function Summary(total) {
         enumerable: true,
         configurable: false,
         get: function() {
-            const installments = total / 12;
-            return installments.toFixed(2);
+            const installments = String((total / 12).toFixed(2));
+            return installments;
         }
     })
 }
 
-console.log(new Summary(980.50).cardInstallments12);
+Summary.prototype.updateSummary = function() {
+    const totalPrice = document.querySelector(".total-price > span");
+    totalPrice.innerText = `$ ${this.total}`;
+
+    const inCash = document.querySelector(".price-incash");
+    inCash.innerText = `$ ${this.inCash}`;
+
+    const priceCard = document.querySelector(".price-card");
+    priceCard.innerText = `$ ${this.total}`;
+
+    const containerCard = document.querySelector(".container-card > p > span");
+    containerCard.innerText = `$ ${this.cardInstallments12}`;
+};
+
+
 
 (() => {
-    const IdsAndQuantitys = getQuantityItems(getProductsId());
-    requestItems(IdsAndQuantitys);
+    const idsAndQuantitys = getQuantityItems(getProductsId());
+    requestItems(idsAndQuantitys);
 
     function requestItems(idsQuantitys) {
+        let counter = 0
+        let totalValue = 0;
+        
         for(let [id, quantity] of Object.entries(idsQuantitys)) {
             productsMethods.getSingleProduct(id, res => {
                 let product;
@@ -36,7 +53,11 @@ console.log(new Summary(980.50).cardInstallments12);
                 } else {
                     product = new CartProductCard(res);
                 }
-                //console.log(product.totalPrice);
+                totalValue += Number(product.totalPrice);
+                if(Object.keys(idsAndQuantitys).length - 1 === counter) {
+                    new Summary(totalValue).updateSummary();
+                };
+                counter++;
             });
         }
     }
