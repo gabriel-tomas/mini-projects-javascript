@@ -1,4 +1,6 @@
-class CartProductCard extends ProductCard {
+import summary from "../summary/Summary.js";
+
+export default class CartProductCard extends ProductCard {
     constructor(product, quantity = 1) {
         super(product);
         this.brand = product.brand;
@@ -119,6 +121,8 @@ class CartProductCard extends ProductCard {
                     updateSpanTimesElText();
                     const addCartItemLclStrg = ProductCard.addCartItemLclStrg.bind(this);
                     addCartItemLclStrg();
+                    summary.updateTotal("add", this.price);
+                    summary.updateSummary();
 
                 } else if(func === "remove") {
                     if(this.quantity <= 1) {
@@ -132,6 +136,8 @@ class CartProductCard extends ProductCard {
                     updateSpanTimesElText();
                     const deleteCartItemLclStrg = ProductCard.deleteCartItemLclStrg.bind(this);
                     deleteCartItemLclStrg();
+                    summary.updateTotal("remove", this.price);
+                    summary.updateSummary();
                 }
             }.bind(this);
 

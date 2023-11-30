@@ -1,9 +1,11 @@
 import getQuantityItems from "./getQuantityItems.js";
 import getProductsId from "./getProductsId.js";
+import CartProductCard from "./cartProductCard.js";
 
 (() => {
-    const IdsAndQuantitys = getQuantityItems(getProductsId());
-    requestItems(IdsAndQuantitys);
+    const idsAndQuantitys = getQuantityItems(getProductsId());
+    if(Object.keys(idsAndQuantitys)[0] === "null") return;
+    requestItems(idsAndQuantitys);
 
     function requestItems(idsQuantitys) {
         for(let [id, quantity] of Object.entries(idsQuantitys)) {
