@@ -11,6 +11,10 @@
     margin-inline: auto;
 }
 
+.margin-align-center {
+    margin-inline: auto;
+}
+
 .space-top {
     margin-top: 2rem;
 }

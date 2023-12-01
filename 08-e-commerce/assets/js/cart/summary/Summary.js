@@ -48,6 +48,9 @@ Summary.prototype.updateTotal = function(method, value) {
     if(method === "add") {
         this.basePrice += value;
     }
+    if(method === "clearAll") {
+        this.basePrice = 0;
+    }
 }
 
 const summary = new Summary();

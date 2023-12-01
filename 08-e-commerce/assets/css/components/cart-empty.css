@@ -1,0 +1,29 @@
+.empty-cart {
+    padding-bottom: clamp(4rem, 3.333rem + 3.333vw, 6rem);
+    position: relative;
+}
+
+.empty-cart::after {
+    content: "";
+    width: clamp(5rem, 3.542rem + 7.292vw, 9.375rem); /*  */
+    height: 2px;
+    background-color: var(--accent);
+    position: absolute;
+    bottom: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.empty-cart .container-img > img {
+    width: 100%;
+    margin-top: clamp(3rem, 2.667rem + 1.667vw, 4rem);
+}
+
+.empty-cart .container-img {
+    width: clamp(15.625rem, 13.125rem + 12.5vw, 23.125rem);
+}
+
+.empty-cart .container-empty-cart > h1 {
+    margin-top: 2rem;
+    text-align: center;
+}

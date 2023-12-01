@@ -15,3 +15,9 @@ function localStorageGet(key) {
     const value = localStorage.getItem(key);
     return JSON.parse(value);
 }
+
+function localStorageRemove(key) {
+    if(typeof key !== "string") throw("Key must be string");
+
+    localStorage.removeItem(key);
+}

@@ -30,9 +30,8 @@
             <h1 class="font-wght-700 font-size-md">My cart</h1>
         </div>
         <section class="items-cart">
-        
         </section>
-        <button>
+        <button class="clean-cart">
             <span class="material-symbols-outlined">delete_forever</span>
             Clean cart
         </button>
@@ -70,13 +69,23 @@
             <button class="btn-finalize-order">finalize order</button>
         </section>
     </section>
+    <section class="empty-cart space-sides max-width-section-align">
+        <div class="container-empty-cart">
+            <div class="container-img margin-align-center">
+                <img src="assets/imgs/empty-cart.svg" alt="Empty cart">
+            </div>
+            <h1 class="font-size-md font-wght-400">Empty cart</h1>
+        </div>
+    </section>
     <script src="assets/js/productApi.js"></script>
     <script src="assets/js/localStorageSaverAndGet.js"></script>
     <script src="assets/js/header.js"></script>
+    <script src="assets/js/cart/checkCart.js"></script>
     <script src="assets/js/productCard.js"></script>
     <script src="assets/js/cart/myCart/cartProductCard.js" type="module"></script>
     <script src="assets/js/cart/summary/requestItems.js" type="module"></script>
     <script src="assets/js/cart/myCart/cartItems.js" type="module"></script>
+    <script src="assets/js/cart/cleanCart.js" type="module"></script>
     <script src="assets/js/createrSectionTopic.js"></script>
 </body>
 </html>
