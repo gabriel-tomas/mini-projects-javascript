@@ -44,6 +44,7 @@ export default class CartProductCard extends ProductCard {
         const headersTitles = ["Product", "Quantity", "Price"];
         for(let i = 0; i < 3; i++) {
             const th = document.createElement("th");
+            th.classList.add("font-size-sm", "font-wght-700");
             th.innerText = headersTitles[i];
             tr.appendChild(th);
         }
@@ -68,12 +69,14 @@ export default class CartProductCard extends ProductCard {
             const divTitle = document.createElement("div");
             divTitle.classList.add("div-title");
             const h3 = document.createElement("h3");
+            h3.classList.add("font-normal", "font-size-base", "font-wght-700");
             h3.innerText = this.title;
             divTitle.appendChild(h3);
 
             const divBrand = document.createElement("div");
             divBrand.classList.add("div-brand");
             const span = document.createElement("span");
+            span.classList.add("font-normal", "font-size-base")
             span.innerText = this.brand;
             divBrand.appendChild(span);
 
@@ -101,19 +104,22 @@ export default class CartProductCard extends ProductCard {
             tdQuantity.classList.add("td-quantity");
 
             const btnMinus = document.createElement("button");
-            btnMinus.classList.add("btn-minus-product");
+            btnMinus.classList.add("btn-minus-product", "font-size-base");
             btnMinus.innerText = "-";
         
             const spanQuantity = document.createElement("span");
-            spanQuantity.classList.add("span-quantity");
+            spanQuantity.classList.add("span-quantity", "font-size-base");
             updateQuantityElText();
 
             const btnPlus = document.createElement("button");
-            btnPlus.classList.add("btn-plus-product");
+            btnPlus.classList.add("btn-plus-product", "font-size-base");
             btnPlus.innerText = "+";
 
             const addRemoveProduct = function(func) {
                 if(func === "add") {
+                    if(this.quantity > 0) {
+                        btnMinus.style.pointerEvents = "all";
+                    };
                     this.quantity++;
                     this.totalPrice = this.price * this.quantity;
                     updateTotalPriceElText();
@@ -156,13 +162,14 @@ export default class CartProductCard extends ProductCard {
             tdPrice.classList.add("td-price");
 
             const pValueTimes = document.createElement("p");
+            pValueTimes.classList.add("font-size-base")
             this.spanTimes = document.createElement("span");
             this.spanTimes.innerText = `${this.quantity}x`;
             pValueTimes.innerText += ` $ ${this.price}`;
             pValueTimes.insertAdjacentElement('afterbegin', this.spanTimes);
 
             this.tagPTotal = document.createElement("p");
-            this.tagPTotal.classList.add("p-total");
+            this.tagPTotal.classList.add("p-total", "font-size-base");
             this.tagPTotal.innerText = `Total: $ ${this.totalPrice}`;
 
             tdPrice.appendChild(pValueTimes);
