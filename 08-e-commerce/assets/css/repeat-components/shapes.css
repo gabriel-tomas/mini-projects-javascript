@@ -26,3 +26,8 @@
 section .container-title {
     margin-bottom: .8rem;
 }
+
+.right-card-defaults {
+    background-color: var(--neutral-0);
+    border-radius: 10px;
+}

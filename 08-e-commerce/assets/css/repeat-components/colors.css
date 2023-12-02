@@ -10,6 +10,8 @@
     --neutral-1: rgba(131, 131, 131, 0.12);
     --neutral-2: rgba(131, 131, 131, 0.3);
     --neutral-3: rgba(255, 255, 255, 0.733);
+    --neutral-4: rgb(233, 233, 233);
+    --neutral-5: rgb(87, 87, 87);
 }
 
 .background-white {

@@ -31,43 +31,46 @@
         </div>
         <section class="items-cart">
         </section>
-        <section class="container-summary">
-            <div>
-                <h2 class="font-wght-700 font-size-md">Summary</h2>
-            </div>
-            <div class="total-price">
-                <h3>Total</h3>
-                <span>$ 000</span>
-            </div>
-            <div class="other-payments">
-                <div class="container-incash">
-                    <h4>in cash</h4>
-                    <span class="price-incash">$ 000</span>
-                    <p>with 15% discount</p>
+        <section class="right-card">
+            <section class="container-summary right-card-defaults">
+                <div class="container-title">
+                    <h2 class="font-wght-700 font-size-md">Summary</h2>
                 </div>
-                <div class="container-card">
-                    <span class="price-card">$ 000</span>
-                    <p>in up to 12x of <span class="12-divided">00.00</span></p>
-                    <p>no interest on the card</p>
+                <div class="total-price">
+                    <h3 class="font-size-md font-wght-400">Total</h3>
+                    <span class="font-size-md font-wght-400">$ 0,00</span>
                 </div>
-            </div>
-            <button class="btn-finalize-order">finalize order</button>
+                <div class="other-payments">
+                    <div class="container-incash font-wght-600">
+                        <h4 class="font-wght-400 font-size-sm">in cash</h4>
+                        <span class="price-incash font-size-md">$ 0,00</span>
+                        <p class="font-wght-400 font-size-sm">with 15% discount</p>
+                    </div>
+                    <div class="container-card">
+                        <span class="price-card font-size-base font-wght-500">$ 0,00</span>
+                        <p class="p-info font-size-sm">in up to 12x of <span class="divided12 font-wght-600">0,00</span><br> no interest on the card</p>
+                    </div>
+                </div>
+                <button class="btn-finalize-order font-wght-700 font-size-base">Finalize order</button>
+            </section>
+            <section class="container-shipping right-card-defaults">
+                <div class="container-title">
+                    <h2 class="font-wght-700 font-size-base">Shipping and delivery</h2>
+                </div>
+                <div class="container-zip-code">
+                    <form action="" class="form-zip-code">
+                        <input class="input-zip-code" type="text" placeholder="Zip code">
+                        <button class="submit-zip-code font-size-base font-wght-700" type="submit">
+                            Calc...
+                        </button>
+                    </form>
+                </div>
+            </section>
+            <button class="clean-cart font-wght-500 font-size-base">
+                <span class="material-symbols-outlined font-wght-300">delete_forever</span>
+                Clean cart
+            </button>
         </section>
-        <section>
-            <div>
-                <h2 class="font-wght-700 font-size-base">Shipping and delivery</h2>
-            </div>
-            <div>
-                <form action="" class="form-zip-code">
-                    <input type="text">
-                    <button type="submit">Calculate</button>
-                </form>
-            </div>
-        </section>
-        <button class="clean-cart">
-            <span class="material-symbols-outlined">delete_forever</span>
-            Clean cart
-        </button>
     </section>
     <section class="empty-cart space-sides max-width-section-align">
         <div class="container-empty-cart">
