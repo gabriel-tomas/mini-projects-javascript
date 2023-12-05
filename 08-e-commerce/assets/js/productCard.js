@@ -28,7 +28,7 @@ class ProductCard {
         
         const a = document.createElement("a");
         a.classList.add("product-link");
-        a.setAttribute("href", `product.html?product;id=${this.id}`);
+        a.setAttribute("href", `product.html?product_id=${this.id}`);
 
         div.append(a);
 
