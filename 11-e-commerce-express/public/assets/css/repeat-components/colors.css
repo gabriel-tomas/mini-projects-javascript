@@ -1,0 +1,19 @@
+:root {
+    --text: #130c22;
+    --background: #ede9f7;
+    --primary: #97bd4c;
+    --secondary: #c4b5e3;
+    --accent: #769537;
+
+    --wth-color: #fff;
+    --neutral-0: rgba(228, 228, 228, 0.781);
+    --neutral-1: rgba(131, 131, 131, 0.12);
+    --neutral-2: rgba(131, 131, 131, 0.3);
+    --neutral-3: rgba(255, 255, 255, 0.733);
+    --neutral-4: rgb(233, 233, 233);
+    --neutral-5: rgb(87, 87, 87);
+}
+
+.background-white {
+    background-color: var(--background);
+}

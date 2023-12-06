@@ -1,0 +1,33 @@
+.radius-total {
+    border-radius: 1000px;
+}
+
+.space-sides {
+    padding-inline: clamp(1rem, 0.333rem + 3.333vw, 3rem);
+}
+
+.max-width-section-align {
+    max-width: 1280px;
+    margin-inline: auto;
+}
+
+.margin-align-center {
+    margin-inline: auto;
+}
+
+.space-top {
+    margin-top: 2rem;
+}
+
+.space-2-top {
+    margin-top: 5rem;
+}
+
+section .container-title {
+    margin-bottom: .8rem;
+}
+
+.right-card-defaults {
+    background-color: var(--neutral-0);
+    border-radius: 10px;
+}

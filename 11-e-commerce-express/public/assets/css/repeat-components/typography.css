@@ -1,0 +1,82 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400;500;600;700&family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+:root {
+    --font-size-sm: clamp(0.8rem, 0.07vw + 0.79rem, 0.84rem);
+    --font-size-base: clamp(1rem, 0.21vw + 0.96rem, 1.13rem);
+    --font-size-md: clamp(1.25rem, 0.42vw + 1.17rem, 1.5rem);
+    --font-size-lg: clamp(1.56rem, 0.73vw + 1.42rem, 2rem);
+    --font-size-xl: clamp(1.95rem, 1.19vw + 1.72rem, 2.66rem);
+    --font-size-xxl: clamp(2.44rem, 1.85vw + 2.07rem, 3.55rem);
+    --font-size-xxxl: clamp(3.05rem, 2.81vw + 2.49rem, 4.73rem);
+
+    --title-font: "Comfortaa", sans-serif;
+    --normal-font: "Jost", sans-serif;
+}
+
+.font-size-sm {
+    font-size: var(--font-size-sm);
+}
+
+.font-size-base {
+    font-size: var(--font-size-base);
+}
+
+.font-size-md {
+    font-size: var(--font-size-md);
+}
+
+.font-size-lg {
+    font-size: var(--font-size-lg);
+}
+
+.font-size-xl {
+    font-size: var(--font-size-xl);
+}
+
+.font-size-xxl {
+    font-size: var(--font-size-xxl);
+}
+
+.font-size-xxxl {
+    font-size: var(--font-size-xxxl);
+}
+
+.font-wght-100 {
+    font-weight: 100;
+}
+
+.font-wght-200 {
+    font-weight: 200;
+}
+
+.font-wght-300 {
+    font-weight: 300;
+}
+
+.font-wght-400 {
+    font-weight: 400;
+}
+
+.font-wght-500 {
+    font-weight: 500;
+}
+
+.font-wght-600 {
+    font-weight: 600;
+}
+
+.font-wght-700 {
+    font-weight: 700;
+}
+
+.font-wght-800 {
+    font-weight: 800;
+}
+
+.font-wght-900 {
+    font-weight: 900;
+}
+
+.normal-font {
+    font-family: var(--normal-font);
+}

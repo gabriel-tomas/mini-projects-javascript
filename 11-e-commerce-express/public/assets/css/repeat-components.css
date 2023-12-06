@@ -1,0 +1,7 @@
+/* componentes que se repetem */
+@import url("./repeat-components/colors.css");
+@import url("./repeat-components/typography.css");
+@import url("./repeat-components/shapes.css");
+@import url("./repeat-components/buttons.css");
+
+@import url("./repeat-components/products.css");

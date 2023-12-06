@@ -1,0 +1,92 @@
+.container-choicer-for-you {
+    background-color: var(--background);
+    height: fit-content;
+    width: 80vw;
+    width: min(80svw, 820px);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.37);
+}
+
+.container-choicer-for-you > .container-top {
+    padding-inline: clamp(1rem, 0.667rem + 1.667vw, 2rem);
+    padding-block: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+    text-align: center;
+    position: relative;
+}
+
+.container-choicer-for-you .btn-close-choicer {
+    position: absolute;
+    right: calc(clamp(1rem, 0.667rem + 1.667vw, 2rem) + 3.5%);
+    top: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+}
+
+.container-choicer-for-you > .container-top > h1 {
+    color: var(--text);
+}
+
+.container-options {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding-inline: clamp(1.875rem, 1.042rem + 4.167vw, 4.375rem);
+    overflow: auto;
+    height: calc(clamp(400px, 80vh, 720px) - (32.975px + (40.450px * 2) + 50px));
+}
+
+.container-options::-webkit-scrollbar, .container-options::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+}
+
+.container-options::-webkit-scrollbar {
+    width: 10px;
+    background-color: var(--neutral-1);
+}
+
+.container-options::-webkit-scrollbar-thumb {
+    background-color: var(--neutral-2);
+}
+
+.container-options > label {
+    background-color: var(--secondary);
+    height: clamp(3.25rem, 5.208rem + 5.208vw, 9.375rem);
+    width: clamp(3.25rem, 5.208rem + 5.208vw, 9.375rem);
+    position: relative;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.container-options span {
+    display: block;
+    text-align: center;
+    word-break: break-all;
+}
+
+.input-choicer-category {
+    display: none;
+}
+
+label:has(.input-choicer-category:checked) {
+    background-color: var(--primary);
+}
+
+label:has(.input-choicer-category:checked) span {
+    color: var(--wth-color);
+    font-weight: 700;
+}
+
+.container-btn-save {
+    display: flex;
+    justify-content: center;
+    padding-block: clamp(2rem, 1.5rem + 2.5vw, 3.5rem);
+}
+
+.btn-save-interests {
+    width: 30%;
+    color: var(--text);
+}

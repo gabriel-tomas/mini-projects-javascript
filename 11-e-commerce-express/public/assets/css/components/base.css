@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, button, input {
+    font-family: var(--title-font);
+    font-size: 15px;
+    color: var(--text);
+}
+
+button, input {
+    border: none;
+    background-color: transparent;
+}
+
+button {
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+    color: var(--text);
+}
+
+input:focus {
+    outline: none;
+}

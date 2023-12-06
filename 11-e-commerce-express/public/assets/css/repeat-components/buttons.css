@@ -1,0 +1,11 @@
+.button {
+    height: 38px;
+}
+
+.primary-button {
+    background-color: var(--primary);
+}
+
+.secondary-button {
+    background-color: var(--secondary);
+}
