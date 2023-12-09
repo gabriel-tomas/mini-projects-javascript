@@ -1,0 +1,26 @@
+<%- include("includes/head") %>
+    <section class="container">
+        <h1 class="gap-bottom0">
+          Registre-se para ver suas notas
+        </h1>
+        <div class="gap-bottom0">
+          <form action="" method="post">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <div>
+              <label for="name-input">Nome:</label>
+              <input type="text" id="name-input" name="name">
+            </div>
+            <div>
+              <label for="user-input">Usuário:</label>
+              <input type="text" id="user-input" name="user">
+            </div>
+            <div>
+              <label for="password-input">Senha:</label>
+              <input type="text" id="password-input" name="password">
+            </div>
+            <button type="submit">Enviar</button>
+          </form>
+        </div>
+      </section>
+    <script src="./assets/js/bundle.js"></script>
+<%- include("includes/footer") %>
