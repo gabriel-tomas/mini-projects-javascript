@@ -1,11 +1,6 @@
 const mongoose = require("mongoose");
+const schema = require("./schemas/userSchema");
 
-const schema = mongoose.Schema({
-    firstName: {type: String, require: true},
-    lastName: {type: String, require: true},
-    userName: {type: String, require: true},
-    password: {type: String, require: true}
-})
 let model;
 try {
     model = mongoose.model("users", schema);

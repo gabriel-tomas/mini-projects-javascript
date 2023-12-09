@@ -14,7 +14,7 @@ exports.loginPost = (req, res, next) => {
                 if(user) {
                     let {_id, firstName, lastName, userName, password} = user;
                     _id = _id.valueOf();
-                    req.session.user = {id: _id, firstName: firstName, lastName: lastName, userName: userName};
+                    req.session.user = {id: _id, firstName: firstName, lastName: lastName, userName: userName, password: password};
                     res.redirect("/notes");
                 } else {
                     res.redirect("/login");

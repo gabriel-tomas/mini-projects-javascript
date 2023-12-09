@@ -2,12 +2,13 @@ exports.checkIfCan = (req, res, next) => {
     try {
         if(req.session.user && req.path !== "/notes") {
             console.log("indo para notes");
-            res.redirect("/notes");
+            return res.redirect("/notes");
         }
     } catch(err) {
-        console.log("Error...");
-        next();
+        console.log(err);
+        return res.redirect("/");
     }
+    next();
 }
 
 exports.checkCsrfError = (err, req, res, next) => {

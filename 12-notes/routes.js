@@ -21,5 +21,6 @@ route.post("/login", loginController.loginPost);
 
 // Notas do usuário (privado para pessoas logadas)
 route.get("/notes", notesPrivate.checkLogin, notesController.homePage);
+route.post("/notes", notesPrivate.checkLogin, notesController.notesPost);
 
 module.exports = route;

@@ -1,11 +1,5 @@
 const mongoose = require("mongoose");
-
-const schema = mongoose.Schema({
-    firstName: {type: String, require: true},
-    lastName: {type: String, require: true},
-    userName: {type: String, require: true},
-    password: {type: String, require: true}
-})
+const schema = require("./schemas/userSchema");
 
 const model = mongoose.model("users", schema);
 
@@ -15,6 +9,7 @@ class SignUp {
         this.lastName = lastName;
         this.userName = userName;
         this.password = password;
+        this.notes = null;
     }
 
     valid() {
