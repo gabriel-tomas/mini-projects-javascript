@@ -1,0 +1,21 @@
+<%- include("includes/head") %>
+    <div class="space-all">
+        <h1>Faça seu login e acesse suas notas!</h1>
+    </div>
+    <section class="container signUp space-all">
+        <form method="post">
+            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <div>
+                <label for="user-name">Nome de usuário:</label>
+                <input type="text" name="userName" id="user-name" autocomplete="nickname">
+            </div>
+            <div>
+                <label for="password">Senha:</label>
+                <input type="password" name="password" id="password" autocomplete="current-password">
+            </div>
+            <div>
+                <button class="accent" type="submit">Login</button>
+            </div>
+        </form>
+    <script src="./assets/js/bundle.js"></script>
+<%- include("includes/footer") %>
