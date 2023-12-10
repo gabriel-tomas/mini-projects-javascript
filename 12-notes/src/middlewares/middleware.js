@@ -1,5 +1,10 @@
 exports.checkIfCan = (req, res, next) => {
     try {
+        if(req.session.user) {
+            res.locals.logged = true;
+        } else {
+            res.locals.logged = false;
+        }
         if(req.session.user && req.path !== "/notes") {
             console.log("indo para notes");
             return res.redirect("/notes");

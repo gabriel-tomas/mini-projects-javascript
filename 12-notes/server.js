@@ -44,7 +44,7 @@ app.set("view engine", "ejs");
 
 app.use(csrf());
 // Meus próprios middlewares
-app.use(checkIfCan);
+/* app.use(checkIfCan); */
 app.use(checkCsrfError);
 app.use(csrfMiddleware);
 app.use(routes);

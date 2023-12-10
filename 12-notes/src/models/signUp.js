@@ -20,6 +20,10 @@ class SignUp {
         return true;
     }
 
+    checkExist() {
+        return model.findOne({userName: this.userName, password: this.password});
+    }
+
     create() {
         model.create(this);
     }

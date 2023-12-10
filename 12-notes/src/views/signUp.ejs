@@ -2,6 +2,13 @@
     <div class="space-all">
         <h1>Se cadastre para ver suas Notas</h1>
     </div>
+    <div class="space-all alert">
+        <span>
+            <% if(exist) { %>
+                <%= exist %>
+            <% } %>
+        </span>
+    </div>
     <section class="container signUp space-all">
         <form method="post">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
