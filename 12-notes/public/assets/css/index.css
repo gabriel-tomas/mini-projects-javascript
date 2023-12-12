@@ -8,3 +8,7 @@
 @import url("./global/components/buttons.css");
 @import url("./global/components/links.css");
 @import url("./global/components/form.css");
+
+/* pages */
+/* > home */
+@import url("./pages/home/home-section.css");

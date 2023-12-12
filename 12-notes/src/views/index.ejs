@@ -1,3 +1,17 @@
 <%- include("includes/head") %>
-    <section class="container welcome space-all"></section>
+    <section class="home-section container welcome space-all">
+        <h1 class="font-size-4 font-700">
+            <span class="header-title">Nunca mais se esqueça sobre:</span>
+            <div class="homeWelcomeWords gap-top-0-8">
+                <!-- <span class="welcomeWord font-400 font-size-3">ideias</span>
+                <span class="welcomeWord font-400 font-size-3">pensamentos</span>
+                <span class="welcomeWord font-400 font-size-3">projetos</span>
+                <span class="welcomeWord font-400 font-size-3">
+                compromissos</span> -->
+                <% for(let word of welcomeWords) { %>
+                    <span class="welcomeWord font-400 font-size-2"><%= word %></span>
+                <% } %>
+            </div>
+        </h1>
+    </section>
 <%- include("includes/footer") %>
