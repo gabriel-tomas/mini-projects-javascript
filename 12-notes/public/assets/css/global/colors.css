@@ -1,6 +1,7 @@
 :root {
     --text: #dde2f4;
     --background: #20273c;
+    --background-note: #171c2b;
     --primary: #8b9ddb;
     --secondary: #6b277e;
     --accent: #cd5dc1;
@@ -29,8 +30,16 @@ body {
     background-color: var(--neutral-0);
 }
 
+.back-note {
+    background-color: var(--background-note);
+}
+
 .back-accent {
     background-color: var(--accent);
+}
+
+.back-primary {
+    background-color: var(--primary);
 }
 
 .text-color {

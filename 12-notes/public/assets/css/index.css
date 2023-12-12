@@ -12,3 +12,5 @@
 /* pages */
 /* > home */
 @import url("./pages/home/home-section.css");
+/* > notes */
+@import url("./pages/notes/notes-section.css");

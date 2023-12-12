@@ -4,13 +4,13 @@
     box-sizing: border-box;
 }
 
-input, button {
+input, button, textarea {
     border: 0;
     border-color: transparent;
     background-color: transparent;
 }
 
-input {
+input, textarea {
     outline: none;
     font-family: var(--secondary-font);
 }
