@@ -4,6 +4,6 @@ exports.checkLogin = (req, res, next) => {
         next();
     } else {
         console.log("Você não é permitido aqui, se cadastre ou logue");
-        res.redirect("/signup");
+        res.redirect("/");
     }
 }

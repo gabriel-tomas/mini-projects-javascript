@@ -1,9 +1,9 @@
 <%- include("includes/head") %>
     <section class="container notes space-all">
-        <form method="post">
+        <form action="/notes" method="post">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <textarea name="newNotes" id="" cols="30" rows="10"><%= notes %></textarea>
             <button type="submit">Salvar</button>
         </form>
-    <script src="./assets/js/bundle.js"></script>
+    </section>
 <%- include("includes/footer") %>

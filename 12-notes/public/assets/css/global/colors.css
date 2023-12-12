@@ -1,3 +1,38 @@
 :root {
-    --primary-color: rgb(170, 165, 121);
+    --text: #dde2f4;
+    --background: #20273c;
+    --primary: #8b9ddb;
+    --secondary: #6b277e;
+    --accent: #cd5dc1;
+
+    --neutral-0: rgba(156, 156, 156, 0.363);
+    --neutral-1: rgba(63, 63, 63, 0.747);
+}
+
+html, a {
+    color: var(--text);
+}
+
+body {
+    background-color: var(--background);
+}
+
+.border-secondary {
+    border: 2px solid var(--secondary);
+}
+
+.border-neutral-0 {
+    border: 1px solid white;
+}
+
+.back-neutral-0 {
+    background-color: var(--neutral-0);
+}
+
+.back-accent {
+    background-color: var(--accent);
+}
+
+.text-color {
+    color: var(--text);
 }

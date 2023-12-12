@@ -1,0 +1,6 @@
+.button {
+    border-radius: 1000px;
+    height: 33px;
+    font-family: var(--primary-font);
+    padding-inline: 15px;
+}

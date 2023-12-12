@@ -1,13 +1,13 @@
-const SingUp = require("../models/signUp");
+const SignUp = require("../models/signUp");
 
 exports.homePage = (req, res, next) => {
     res.locals.exist = null;
     res.render("signUp");
 }
 
-exports.singUpPost = (req, res, next) => {
+exports.signUpPost = (req, res, next) => {
     const {firstName, lastName, userName, password} = req.body;
-    const newUser = new SingUp(firstName, lastName, userName, password);
+    const newUser = new SignUp(firstName, lastName, userName, password);
     const validUser = newUser.valid();
     const checkExist = newUser.checkExist();
     if(validUser) {

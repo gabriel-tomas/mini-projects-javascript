@@ -1,0 +1,56 @@
+.form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: clamp(250px, 60%, 400px);
+    margin-inline: auto;
+}
+
+.form > div {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.form > div > * {
+    width: 100%;
+}
+
+.form > div > input {
+    width: 100%;
+    height: clamp(1rem, 0.659rem + 2.179vw, 2.063rem);
+    border-radius: 1000px;
+    padding: 5px 20px;
+    transition: 80ms box-shadow;
+}
+
+.form > div > input:focus {
+    background-color: var(--neutral-1);
+}
+
+.form > div > .secondary-input:focus {
+    border: 2px solid var(--secondary);
+    box-shadow: 0px 0px 5px var(--secondary);
+}
+
+.form > div > .primary-input:focus {
+    border: 2px solid var(--primary);
+    box-shadow: 0px 0px 5px var(--primary);
+}
+
+.form button {
+    transition: 200ms box-shadow;
+}
+
+.form button:hover {
+    box-shadow: 0px 0px 4px var(--accent);
+}
+
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus {
+    transition: background-color 600000s 0s, color 600000s 0s;
+}
+input[data-autocompleted] {
+    background-color: transparent !important;
+}

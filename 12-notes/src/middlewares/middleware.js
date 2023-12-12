@@ -1,10 +1,5 @@
 exports.checkIfCan = (req, res, next) => {
     try {
-        if(req.session.user) {
-            res.locals.logged = true;
-        } else {
-            res.locals.logged = false;
-        }
         if(req.session.user && req.path !== "/notes") {
             console.log("indo para notes");
             return res.redirect("/notes");
@@ -16,8 +11,17 @@ exports.checkIfCan = (req, res, next) => {
     next();
 }
 
+exports.loggedTemplate = (req, res, next) => {
+    if(req.session.user) {
+        res.locals.logged = true;
+    } else {
+        res.locals.logged = false;
+    }
+    next();
+}
+
 exports.checkCsrfError = (err, req, res, next) => {
-    if(err && err.code === "EBADCSRFTOKEN") {
+    if(err) {
         return res.render("404");
     }
     next();

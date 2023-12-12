@@ -16,4 +16,5 @@ exports.notesPost = (req, res, next) => {
     const {userName, password} = req.session.user;
     const notes = new Notes(userName, password);
     notes.updateNotes(newNotes);
+    res.redirect("/notes");
 }

@@ -1,6 +1,6 @@
 <%- include("includes/head") %>
-    <div class="space-all">
-        <h1>Se cadastre para ver suas Notas</h1>
+    <div class="space-all text-center gap-top-4">
+        <h1 class="font-size-2">Se cadastre para ver suas Notas</h1>
     </div>
     <div class="space-all alert">
         <span>
@@ -10,27 +10,27 @@
         </span>
     </div>
     <section class="container signUp space-all">
-        <form method="post">
+        <form class="form gap-top-2-5" method="post">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-            <div>
-                <label for="first-name">Primeiro nome:</label>
-                <input type="text" name="firstName" id="first-name" autocomplete="given-name">
+            <div class="gap-bottom0">
+                <label class="gap-bottom-05 font-size--1 font-300" for="first-name">Primeiro nome:</label>
+                <input class="secondary-input text-color back-neutral-0" type="text" name="firstName" id="first-name" autocomplete="given-name">
             </div>
-            <div>
-                <label for="last-name">Sobrenome:</label>
-                <input type="text" name="lastName" id="last-name" autocomplete="family-name">
+            <div class="gap-bottom0">
+                <label class="gap-bottom-05 font-size--1 font-300" for="last-name">Sobrenome:</label>
+                <input class="secondary-input text-color back-neutral-0" type="text" name="lastName" id="last-name" autocomplete="family-name">
             </div>
-            <div>
-                <label for="user-name">Nome de usuário:</label>
-                <input type="text" name="userName" id="user-name" autocomplete="nickname">
+            <div class="gap-bottom0">
+                <label class="gap-bottom-05 font-size--1 font-300" for="user-name">Nome de usuário:</label>
+                <input class="secondary-input text-color back-neutral-0" type="text" name="userName" id="user-name" autocomplete="nickname">
             </div>
-            <div>
-                <label for="password">Senha:</label>
-                <input type="password" name="password" id="password" autocomplete="current-password">
+            <div class="gap-bottom0">
+                <label class="gap-bottom-05 font-size--1 font-300" for="password">Senha:</label>
+                <input class="secondary-input text-color back-neutral-0" type="password" name="password" id="password" autocomplete="current-password">
             </div>
-            <div>
-                <button class="accent" type="submit">Cadastrar</button>
+            <div class="gap-top-1">
+                <button class="button back-accent font-size--1 font-700" type="submit">Cadastrar</button>
             </div>
         </form>
-    <script src="./assets/js/bundle.js"></script>
+    </section>
 <%- include("includes/footer") %>

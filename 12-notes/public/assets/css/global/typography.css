@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,400;8..144,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
 :root {
     --step--2: clamp(0.7381rem, 0.7102rem + 0.1394vw, 0.8rem);
@@ -9,10 +9,13 @@
     --step-3: clamp(1.8363rem, 1.5636rem + 1.3634vw, 2.4413rem);
     --step-4: clamp(2.2031rem, 1.8206rem + 1.9127vw, 3.0519rem);
     --step-5: clamp(2.6438rem, 2.1159rem + 2.6394vw, 3.815rem);
-  }
+
+    --primary-font: "Jost", sans-serif;
+    --secondary-font: "Roboto", sans-serif;
+}
 
 html {
-    font-family: "Roboto Flex", sans-serif;
+    font-family: var(--primary-font);
     font-size: 16px;
 }
 
@@ -46,4 +49,29 @@ html {
 
 .font-size-5 {
     font-size: var(--step-5);
+}
+
+
+.font-700 {
+    font-weight: 700;
+}
+
+.font-600 {
+    font-weight: 600;
+}
+
+.font-500 {
+    font-weight: 500;
+}
+
+.font-400 {
+    font-weight: 400;
+}
+
+.font-300 {
+    font-weight: 300;
+}
+
+.font-200 {
+    font-weight: 200;
 }
