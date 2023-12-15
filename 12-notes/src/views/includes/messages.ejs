@@ -1,0 +1,34 @@
+<% if(errors.length > 0) { %>
+    <div class="alert alert-danger gap-top-1">
+        <% for(let error of errors) { %>
+            <div class="container-p">
+                <p class="font-size--1"><%= error %></p>
+            </div>
+        <% } %>
+    </div>
+<% } %>
+
+<% if(successes.length > 0) { %>
+    <div class="alert alert-success gap-top-1">
+        <% for(let success of successes) { %>
+            <div class="container-p">
+                <p class="font-size--1"><%= success %></p>
+            </div>
+        <% } %>
+    </div>
+<% } %>
+
+<% if(floatWarns.length > 0) { %>
+    <div class="float-alert float-alert-warn gap-top-1">
+        <% for(let floatWarn of floatWarns) { %>
+            <div class="container-p">
+                <p class="font-size--1"><%= floatWarn %></p>
+            </div>
+            <button class="close-float-alert font-size--1">
+                <span class="material-symbols-outlined">
+                close
+                </span>
+            </button>
+        <% } %>
+    </div>
+<% } %>

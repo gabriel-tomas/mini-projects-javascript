@@ -1,22 +1,8 @@
-exports.checkIfCan = (req, res, next) => {
-    try {
-        if(req.session.user && req.path !== "/notes") {
-            console.log("indo para notes");
-            return res.redirect("/notes");
-        }
-    } catch(err) {
-        console.log(err);
-        return res.redirect("/");
-    }
-    next();
-}
-
-exports.loggedTemplate = (req, res, next) => {
-    if(req.session.user) {
-        res.locals.logged = true;
-    } else {
-        res.locals.logged = false;
-    }
+exports.middlewareGlobal = (req, res, next) => {
+    res.locals.errors = req.flash("errors");
+    res.locals.successes = req.flash("successes");
+    res.locals.user = req.session.user;
+    res.locals.floatWarns = req.flash("floatWarns");
     next();
 }
 

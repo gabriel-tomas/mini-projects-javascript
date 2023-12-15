@@ -4,28 +4,24 @@ exports.homePage = (req, res, next) => {
     res.render("login");
 }
 
-exports.loginPost = (req, res, next) => {
-    const {userName, password} = req.body;
-    const conta = new Login(userName, password);
-    const validarConta = conta.valid();
-    if(validarConta) {
-        conta.login()
-            .then(user => {
-                if(user) {
-                    let {_id, firstName, lastName, userName, password} = user;
-                    _id = _id.valueOf();
-                    req.session.user = {id: _id, firstName: firstName, lastName: lastName, userName: userName, password: password};
-                    res.redirect("/notes");
-                } else {
-                    res.redirect("/login");
-                }
-            })
-            .catch((err) => {
+exports.login = async (req, res, next) => {
+    try {
+        const login = new Login(req.body);
+        await login.login();
+        if(login.errors.length > 0) {
+            req.flash("errors", login.errors);
+            req.session.save(() => {
                 res.redirect("/login");
-                console.log(err);
-                return false;
-            })
-    } else {
-        res.redirect("/login");
+            });
+            return;
+        }
+        /* req.flash("successes", "Conta criada com sucesso!"); */
+        req.session.user = login.user;
+        req.session.save(() => {
+            res.redirect("back");
+        });
+    } catch(err) {
+        console.log(err);
+        res.render("404");
     }
 }

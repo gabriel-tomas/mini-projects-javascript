@@ -1,27 +1,58 @@
 const mongoose = require("mongoose");
 const schema = require("./schemas/userSchema");
+const bcrypt = require("bcryptjs");
 
-let model;
+let modelUser;
 try {
-    model = mongoose.model("users", schema);
+    modelUser = mongoose.model("users", schema);
 } catch (e) {
-    model = mongoose.models.users;
+    modelUser = mongoose.models.users;
 }
 
 class Login {
-    constructor (userName, password) {
-        this.userName = userName;
-        this.password = password;
+    constructor (body) {
+        this.body = body;
+        this.errors = [];
+        this.user = null;
+    }
+
+    async login() {
+        this.cleanUp();
+        this.valid();
+        if(this.errors.length > 0) return;
+
+        this.user = await modelUser.findOne({userName: this.body.userName});
+
+        if(!this.user) {
+            return this.errors.push("Usuário ou senha inválido ou incorreto");
+        }
+
+        if(!bcrypt.compareSync(this.body.password, this.user.password)) {
+            this.errors.push("A senha está incorreta");
+            this.user = null;
+        }
     }
 
     valid() {
-        if(typeof this.userName !== "string" || this.userName.length < 5) return false;
-        if(typeof this.password !== "string" || this.password.length < 8) return false;
-        return true;
+        if(this.body.userName === "") this.errors.push('Campo "Nome de usuário" não pode estar vazio');
+        if(this.body.password === "") this.errors.push('Campo "Senha" não pode estar vazio');
+
+        if(this.body.password !== "" && this.body.password.length < 8 || this.body.userName !== "" && this.body.userName.length < 5) this.errors.push("Usuário ou senha inválido ou incorreto");
     }
 
-    login() {
-        return model.findOne({userName: this.userName, password: this.password});
+    cleanUp() {
+        for(const key in this.body) {
+            if(typeof this.body[key] !== "string") {
+                this.body[key] = "";
+            }
+        }
+
+        this.body = {
+            firstName: this.body.firstName,
+            lastName: this.body.lastName,
+            userName: this.body.userName,
+            password: this.body.password
+        };
     }
 }
 

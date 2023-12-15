@@ -1,30 +1,27 @@
 const SignUp = require("../models/signUp");
 
 exports.homePage = (req, res, next) => {
-    res.locals.exist = null;
     res.render("signUp");
 }
 
-exports.signUpPost = (req, res, next) => {
-    const {firstName, lastName, userName, password} = req.body;
-    const newUser = new SignUp(firstName, lastName, userName, password);
-    const validUser = newUser.valid();
-    const checkExist = newUser.checkExist();
-    if(validUser) {
-        checkExist.then(r => {
-            if(r) {
-                req.flash("existUser", "Esta conta já existe, faça o login");
-                res.locals.exist = req.flash("existUser");
-                res.render("signUp");
-                return;
-            } else {
-                newUser.create();
-                console.log(`SignUp - Usuário ${userName} criado`);
-                res.redirect("/login");
-                return;
-            }
-        })
-    } else {
-        res.redirect("/signup");
+exports.signUp = async (req, res, next) => {
+    try {
+        const signUp = new SignUp(req.body);
+        await signUp.register();
+        if(signUp.errors.length > 0) {
+            req.flash("errors", signUp.errors);
+            req.session.save(() => {
+                res.redirect("/signup");
+            });
+            return;
+        }
+        req.flash("successes", "Conta criada com sucesso!");
+        req.session.user = signUp.user;
+        req.session.save(() => {
+            res.redirect("/signup");
+        });
+    } catch(err) {
+        console.log(err);
+        res.render("404");
     }
 }

@@ -9,26 +9,26 @@ const loginController = require("./src/controllers/login");
 const logoutController = require("./src/controllers/logout");
 
 const notesController = require("./src/controllers/notes");
-const notesPrivate = require("./src/middlewares/notesPrivate");
+const notesPrivate = require("./src/middlewares/notes");
 
-const {loggedTemplate, checkIfCan} = require("./src/middlewares/middleware");
+const {sessionCheck} = require("./src/middlewares/login");
 
 // Rota home
-route.get("/", loggedTemplate, homeController.homePage);
+route.get("/", homeController.homePage);
 
 // Rota sign up
-route.get("/signup", loggedTemplate, checkIfCan, signUpController.homePage);
-route.post("/signup", checkIfCan, signUpController.signUpPost);
+route.get("/signup", sessionCheck, signUpController.homePage);
+route.post("/signup", sessionCheck, signUpController.signUp);
 
 // Rota login
-route.get("/login", loggedTemplate, checkIfCan, loginController.homePage);
-route.post("/login", checkIfCan, loginController.loginPost);
+route.get("/login", sessionCheck, loginController.homePage);
+route.post("/login", sessionCheck, loginController.login);
 
 // Rota logout
 route.get("/logout", logoutController.logout);
 
 // Notas do usuário (privado para pessoas logadas)
-route.get("/notes", loggedTemplate, notesPrivate.checkLogin, notesController.homePage);
+route.get("/notes", notesPrivate.checkLogin, notesController.homePage);
 route.post("/notes", notesPrivate.checkLogin, notesController.notesPost);
 
 module.exports = route;

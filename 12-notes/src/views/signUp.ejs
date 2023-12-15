@@ -2,14 +2,8 @@
     <div class="space-all text-center gap-top-4">
         <h1 class="font-size-2">Se cadastre para ver suas Notas</h1>
     </div>
-    <div class="space-all alert">
-        <span>
-            <% if(exist) { %>
-                <%= exist %>
-            <% } %>
-        </span>
-    </div>
     <section class="container signUp space-all">
+        <%- include("./includes/messages") %>
         <form class="form gap-top-2-5" method="post">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="gap-bottom0">

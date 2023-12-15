@@ -3,6 +3,7 @@
         <h1>Faça seu login e acesse suas notas!</h1>
     </div>
     <section class="container signUp space-all">
+        <%- include("./includes/messages") %>
         <form class="form gap-top-2-5" method="post">
             <input type="hidden" name="_csrf" value="<%= csrfToken %>">
             <div class="gap-bottom0">
