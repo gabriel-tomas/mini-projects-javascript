@@ -46,6 +46,11 @@
     border-color: rgba(187, 185, 47, 0.801);
 }
 
+.float-alert-success {
+    background-color: rgb(81, 121, 76);
+    border-color: rgba(52, 187, 47, 0.801);
+}
+
 .close-float-alert {
     position: absolute;
     right: 20px;

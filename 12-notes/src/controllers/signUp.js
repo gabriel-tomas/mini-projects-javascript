@@ -15,10 +15,10 @@ exports.signUp = async (req, res, next) => {
             });
             return;
         }
-        req.flash("successes", "Conta criada com sucesso!");
+        req.flash("floatSuccesses", "Conta criada com sucesso!");
         req.session.user = signUp.user;
         req.session.save(() => {
-            res.redirect("/signup");
+            res.redirect("/");
         });
     } catch(err) {
         console.log(err);

@@ -32,3 +32,19 @@
         <% } %>
     </div>
 <% } %>
+
+
+<% if(floatSuccesses.length > 0) { %>
+    <div class="float-alert float-alert-success gap-top-1">
+        <% for(let floatSuccess of floatSuccesses) { %>
+            <div class="container-p">
+                <p class="font-size--1"><%= floatSuccess %></p>
+            </div>
+            <button class="close-float-alert font-size--1">
+                <span class="material-symbols-outlined">
+                close
+                </span>
+            </button>
+        <% } %>
+    </div>
+<% } %>

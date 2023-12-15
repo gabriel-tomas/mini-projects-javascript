@@ -15,7 +15,7 @@ exports.login = async (req, res, next) => {
             });
             return;
         }
-        /* req.flash("successes", "Conta criada com sucesso!"); */
+        req.flash("floatSuccesses", "Logado com sucesso!");
         req.session.user = login.user;
         req.session.save(() => {
             res.redirect("back");
