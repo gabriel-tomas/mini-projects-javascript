@@ -47,7 +47,8 @@ class SignUp {
             firstName: this.body.firstName,
             lastName: this.body.lastName,
             userName: this.body.userName,
-            password: this.body.password
+            password: this.body.password,
+            notes: null
         };
     }
 }

@@ -1,10 +1,10 @@
 const Login = require("../models/login");
 
-exports.homePage = (req, res, next) => {
+exports.index = async (req, res) => {
     res.render("login");
 }
 
-exports.login = async (req, res, next) => {
+exports.login = async (req, res) => {
     try {
         const login = new Login(req.body);
         await login.login();

@@ -3,11 +3,15 @@
     --background: #20273c;
     --background-note: #171c2b;
     --primary: #8b9ddb;
+    --primary-2: #7887bdb4;
     --secondary: #6b277e;
+    --secondary-2: #352a66cc;
+    --secondary-3: #50467ccc;
     --accent: #cd5dc1;
 
     --neutral-0: rgba(156, 156, 156, 0.363);
     --neutral-1: rgba(63, 63, 63, 0.747);
+    --neutral-3: rgb(51, 51, 51);
 }
 
 html, a {
@@ -30,6 +34,10 @@ body {
     background-color: var(--neutral-0);
 }
 
+.back-neutral-3 {
+    background-color: var(--neutral-3);
+}
+
 .back-note {
     background-color: var(--background-note);
 }
@@ -40,6 +48,22 @@ body {
 
 .back-primary {
     background-color: var(--primary);
+}
+
+.back-primary-2 {
+    background-color: var(--primary-2);
+}
+
+.back-secondary {
+    background-color: var(--secondary);
+}
+
+.back-secondary-2 {
+    background-color: var(--secondary-2);
+}
+
+.back-secondary-3 {
+    background-color: var(--secondary-3);
 }
 
 .text-color {

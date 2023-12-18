@@ -31,3 +31,79 @@ body {
     background-color: var(--primary);
     border-radius: 50px;
 }
+
+.container-note {
+    height: 80px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.form-create-note {
+    display: none;
+    position: absolute;
+    width: calc(clamp(250px, 100vw, 1030px) - 50px * 2);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.247);
+}
+
+.header-create-note {
+    display: grid;
+    grid-template-columns: auto;
+    grid-template-rows: auto;
+}
+
+.header-create-note > h1 {
+    justify-self: center;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.header-create-note > button {
+    justify-self: right;
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.container-notes {
+    height: 90%;
+}
+
+.table-notes {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.table-notes > tbody {
+    display: block;
+    height: 100%;
+    overflow: auto;
+}
+
+.table-notes .container-note {
+    display: grid;
+    grid-template-columns: 1fr 1.8fr .5fr .5fr;
+    padding-inline: 40px;
+}
+
+.table-notes .container-note > td:nth-child(3) {
+    justify-self: right;
+}
+
+.table-notes .container-note > td:last-child {
+    justify-self: right;
+}
+
+.link-tools {
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    padding: 10px;
+}

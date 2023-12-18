@@ -1,10 +1,10 @@
 const SignUp = require("../models/signUp");
 
-exports.homePage = (req, res, next) => {
+exports.index = (req, res) => {
     res.render("signUp");
 }
 
-exports.signUp = async (req, res, next) => {
+exports.signUp = async (req, res) => {
     try {
         const signUp = new SignUp(req.body);
         await signUp.register();

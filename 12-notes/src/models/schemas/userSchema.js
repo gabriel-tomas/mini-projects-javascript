@@ -5,7 +5,7 @@ const schema = mongoose.Schema({
     lastName: {type: String, required: true},
     userName: {type: String, required: true},
     password: {type: String, required: true},
-    notes: {}
+    notes: {type: Object, required: false}
 })
 
 module.exports = schema;

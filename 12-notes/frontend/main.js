@@ -6,3 +6,4 @@ import "./assets/css/index.css";
 
 /* js */
 import "./assets/js/messages";
+import "./assets/js/pages/notes/createNote";

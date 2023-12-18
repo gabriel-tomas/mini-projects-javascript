@@ -1,9 +1,57 @@
 <%- include("includes/head") %>
     <section class="notes container notes space-all">
-        <form action="/notes" method="post">
-            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
-            <textarea class="text-area back-note text-color font-size--1" name="newNotes" id="" cols="30" rows="10"><%= notes %></textarea>
-            <button class="button font-size-0 back-primary gap-top-1" type="submit">Salvar</button>
-        </form>
+        <%- include("./includes/messages") %>
+        <div class="container-note back-secondary">
+            <button class="create-note font-size-0 text-color font-500 text-center">Criar nova nota</button>
+            <span class="material-symbols-outlined font-size-1 text-color font-500">add</span>
+            <div class="form-create-note back-neutral-3">
+                <header class="header-create-note">
+                    <h1 class="font-size-1 gap-bottom1 text-center">Cria uma nova nota</h1>
+                    <button class="close-form-create-note gap-bottom1">
+                        <span class="material-symbols-outlined font-size-2 text-color font-500">close</span>
+                    </button>
+                </header>
+                <form class="form" action="/notes/create" method="post">
+                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                    <div class="gap-bottom0">
+                        <label class="gap-bottom-05 font-size--1 font-300" for="note-name">*Nome da nota:</label>
+                        <input class="primary-input text-color back-neutral-0" type="text" name="noteName" id="note-name">
+                    </div>
+                    <div class="gap-bottom0">
+                        <label class="gap-bottom-05 font-size--1 font-300" for="note-desc">Descrição da nota:</label>
+                        <input class="primary-input text-color back-neutral-0" type="text" name="noteDesc" id="note-desc">
+                    </div>
+                    <div class="gap-top-1">
+                        <button class="button back-primary font-size--1 font-700" type="submit">Criar nota</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <% if(notes) { %>
+            <div class="container-notes gap-top-1-5">
+                <table class="table-notes">
+                    <tbody>
+                        <% notes.forEach(note => { %>
+                            <tr class="container-note back-secondary-2 gap-bottom0">
+                                <td class="font-size--1 font-500"><%= note.noteName %></td>
+                                <td class="font-size--1 font-300"><%= note.noteDesc %></td>
+                                <td class="font-size--1">
+                                    <a class="link-tools back-primary-2" href="/notes/edit/<%= note.id %>">
+                                        <span>Editar</span>
+                                        <span class="material-symbols-outlined">edit</span>
+                                    </a>
+                                </td>
+                                <td class="font-size--1">
+                                    <a class="link-tools back-secondary-3" href="/notes/delete/<%= note.id %>">
+                                        <span>Deletar</span>
+                                        <span class="material-symbols-outlined">delete</span>
+                                    </a>
+                                </td>
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+            </div>
+        <% } %>
     </section>
 <%- include("includes/footer") %>

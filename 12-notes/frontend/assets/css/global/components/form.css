@@ -46,6 +46,10 @@
     box-shadow: 0px 0px 4px var(--accent);
 }
 
+.form button:hover.back-primary {
+    box-shadow: 0px 0px 4px var(--primary);
+}
+
 
 input:-webkit-autofill,
 input:-webkit-autofill:focus {
