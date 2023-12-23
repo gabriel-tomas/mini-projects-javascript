@@ -10,6 +10,6 @@ Projetos diversos(pequenos e grandes) feitos com o objetivo de praticar javascri
 | <h3>E-commerce</h3> | <h3 align="left">Game pedra, papel, tesoura</h3> | 
 | :---        |    ----:   | 
 |<img src="./readme-images/e-commerce.png" alt="Projeto e-commerce"> | <img src="./readme-images/rock-paper-scissors.png" alt="Projeto rock paper scissors game"> |
-| ***Destaque***: fetch API para pegar os produtos e rotas, como rota do carrinho /cart e webpack com babel. | <div align="left">***Destaque***: pedra, papel, tesoura 👍.</div> |
+| ***Destaque***: fetch API para pegar os produtos, rotas, como rota do carrinho /cart e webpack com babel. | <div align="left">***Destaque***: pedra, papel, tesoura 👍.</div> |
 
 
