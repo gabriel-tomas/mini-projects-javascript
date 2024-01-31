@@ -1,6 +1,8 @@
 import { createGlobalStyle, styled } from 'styled-components';
-import colors from '../config/colors';
 import 'react-toastify/dist/ReactToastify.css';
+
+import fonts from '../config/fonts';
+import colors from '../config/colors';
 
 export default createGlobalStyle`
   * {
@@ -9,6 +11,23 @@ export default createGlobalStyle`
     outline: none;
     border: none;
     box-sizing: border-box;
+  }
+
+  :root {
+    --text: ${colors.text};
+    --background: ${colors.background};
+    --backgroundCard: ${colors.backgroundCard};
+    --primary: ${colors.primary};
+    --secondary: ${colors.secondary};
+    --accent: ${colors.accent};
+
+    --font-size-sm: ${fonts.fontSizeSm};
+    --font-size-base: ${fonts.fontSizeBase};
+    --font-size-md: ${fonts.fontSizeMd};
+    --font-size-lg: ${fonts.fontSizeLg};
+    --font-size-xl: ${fonts.fontSizeXl};
+    --font-size-xxl: ${fonts.fontSizeXxl};
+    --font-size-xxxl: ${fonts.fontSizeXxxl};
   }
 
   html, button, input, a {

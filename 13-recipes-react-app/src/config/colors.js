@@ -1,6 +1,7 @@
 export default {
   text: '#080918',
   background: '#f8f8fd',
+  backgroundCard: '#9f9fa32b',
   primary: '#4a54c2',
   secondary: '#cada91',
   accent: '#6ece92',

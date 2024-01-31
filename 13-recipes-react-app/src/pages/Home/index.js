@@ -1,11 +1,11 @@
 import React from 'react';
 import { useDispatch } from 'react-redux';
 
-import { Title } from './styled';
+import { ContainerRecipes, Title } from './styled';
 import * as actions from '../../store/modules/recipes/actions';
 import { useSelector } from 'react-redux';
 
-import Recipes from './Recipes';
+import Recipes from '../../components/Recipes';
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -16,9 +16,9 @@ export default function Home() {
   }, []);
 
   return (
-    <div style={{ marginTop: `2rem` }}>
+    <ContainerRecipes style={{ marginTop: `2rem` }}>
       <Title>Receitas do dia</Title>
       <Recipes items={items} />
-    </div>
+    </ContainerRecipes>
   );
 }
