@@ -4,7 +4,6 @@ import { FaRegClock, FaUserFriends, FaStar } from 'react-icons/fa';
 import { ContainerRecipes } from './styled';
 
 export default function Recipes({ items }) {
-  const recipes = items.recipes;
   const mealDifficultys = {
     easy: 'Fácil',
     medium: 'Moderado',
@@ -13,8 +12,8 @@ export default function Recipes({ items }) {
 
   return (
     <ContainerRecipes>
-      {recipes
-        ? recipes.map((item) => {
+      {items.length > 0
+        ? items.map((item) => {
             return (
               <div className="recipe-item" key={item.id}>
                 <div className="container-img">

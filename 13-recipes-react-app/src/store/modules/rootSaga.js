@@ -1,7 +1,7 @@
 import { all } from 'redux-saga/effects';
 
-import getRecipes from './recipes/sagas';
+import example from './example/sagas';
 
 export default function* rootSaga() {
-  return yield all([getRecipes]);
+  return yield all([example]);
 }

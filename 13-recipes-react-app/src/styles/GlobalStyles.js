@@ -21,6 +21,8 @@ export default createGlobalStyle`
     --secondary: ${colors.secondary};
     --accent: ${colors.accent};
 
+    --neutral1: ${colors.neutral1};
+
     --font-size-sm: ${fonts.fontSizeSm};
     --font-size-base: ${fonts.fontSizeBase};
     --font-size-md: ${fonts.fontSizeMd};
@@ -38,6 +40,7 @@ export default createGlobalStyle`
 
   body {
     background-color: ${colors.background};
+    height: 100vh;
   }
 
   button {
