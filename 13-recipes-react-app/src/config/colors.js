@@ -7,6 +7,8 @@ export default {
   accent: '#6ece92',
 
   neutral1: '#52525233',
+  neutral2: '#5252525e',
+  neutral3: 'rgb(33 33 33)',
 
   messages: {
     success: '#577d3d',

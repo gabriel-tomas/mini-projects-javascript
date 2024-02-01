@@ -9,6 +9,7 @@ import history from './services/history';
 import GlobalStyles, { Main } from './styles/GlobalStyles';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import Nav from './components/Nav';
 import Routes from './routes';
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
           </Main>
           <ToastContainer autoClose={2500} className="toast-container" />
           <Footer />
+          <Nav />
         </Router>
       </PersistGate>
     </Provider>

@@ -6,12 +6,13 @@ export const ContainerRecipes = styled.div`
   grid-template-rows: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1rem;
   margin-top: 2rem;
-  margin-block: 4rem;
+  margin-bottom: 4rem;
   font-size: var(--font-size-base);
 
   .recipe-item {
     background-color: var(--backgroundCard);
     border-radius: 10px;
+    animation: show .3s;
   }
 
   .container-img > img {
@@ -51,5 +52,18 @@ export const ContainerRecipes = styled.div`
   .container-difficulty-rating .rating {
     display: flex;
     align-items: center;
+  }
+
+  @keyframes show {
+    0%{
+      opacity: 0;
+    }
+    100%{
+      opacity: 1;
+    }
+  }
+
+  @media screen and (max-width: 573px) {
+    margin-inline: 1rem;
   }
 `;

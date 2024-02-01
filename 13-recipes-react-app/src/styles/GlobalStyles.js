@@ -22,6 +22,7 @@ export default createGlobalStyle`
     --accent: ${colors.accent};
 
     --neutral1: ${colors.neutral1};
+    --neutral2: ${colors.neutral2};
 
     --font-size-sm: ${fonts.fontSizeSm};
     --font-size-base: ${fonts.fontSizeBase};
@@ -40,7 +41,13 @@ export default createGlobalStyle`
 
   body {
     background-color: ${colors.background};
-    height: 100vh;
+    min-height: 100vh;
+  }
+
+  body > #root {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
   }
 
   button {
